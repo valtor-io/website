@@ -97,17 +97,32 @@ export function Hero() {
   const lastFrameIndex = useRef(-1);
   const rafId = useRef(0);
   const [ready, setReady] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Extract frames on mount
+  // Detect mobile on mount
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  // Desktop: extract frames for smooth scroll playback
+  // Mobile: just autoplay the video natively (frame extraction often fails on mobile)
   useEffect(() => {
     const video = videoRef.current;
     const canvas = canvasRef.current;
     if (!video || !canvas) return;
+
+    // Mobile: autoplay video, skip frame extraction
+    if (window.innerWidth < 768) {
+      video.autoplay = true;
+      video.loop = true;
+      video.play().catch(() => {});
+      return;
+    }
 
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
@@ -143,15 +158,16 @@ export function Hero() {
     return () => video.removeEventListener("loadeddata", onMetadata);
   }, []);
 
-  // RAF loop — draws the right frame based on scroll, zero decode lag
+  // Desktop: RAF loop draws pre-extracted frames based on scroll
   useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
 
     const tick = () => {
-      // Use total if extraction done, otherwise use frames captured so far
       const total = totalFramesRef.current || framesRef.current.length;
       if (total > 0) {
         const p = clamp(latestProgress.current / 0.65, 0, 1);
@@ -194,21 +210,21 @@ export function Hero() {
   return (
     <div ref={containerRef} className="relative h-[200vh] md:h-[250vh]">
       <section className="sticky top-0 h-[100dvh] w-full overflow-hidden">
-        {/* Video — only used for frame extraction */}
+        {/* Video — visible on mobile (autoplay), hidden on desktop after frame extraction */}
         <video
           ref={videoRef}
           src="/header.mp4"
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover md:object-cover object-center"
-          style={ready ? { display: "none" } : undefined}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={ready && !isMobile ? { display: "none" } : undefined}
         />
 
-        {/* Canvas — displays pre-extracted frames */}
+        {/* Canvas — desktop only, displays pre-extracted frames */}
         <canvas
           ref={canvasRef}
-          className="absolute inset-0 w-full h-full"
+          className="absolute inset-0 w-full h-full hidden md:block"
           style={{ objectFit: "cover" }}
         />
 
