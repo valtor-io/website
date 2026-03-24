@@ -6,11 +6,13 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -18,6 +20,7 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -43,6 +46,10 @@ export default function RootLayout({
       lang="de"
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
     >
+      <head>
+        {/* Preload hero video for faster first paint */}
+        <link rel="preload" href="/header.mp4" as="video" type="video/mp4" />
+      </head>
       <body>{children}</body>
     </html>
   );

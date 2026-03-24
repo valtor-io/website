@@ -257,25 +257,24 @@ export function Hero() {
   if (isMobile) {
     return (
       <section className="pt-24 pb-16 px-6">
-        {/* Video card */}
-        <div className="relative overflow-hidden" style={{ borderRadius: "12px", aspectRatio: "16/9" }}>
+        {/* Video card — uses preload="none" + autoPlay so browser starts downloading
+            only after critical content is painted */}
+        <div className="relative overflow-hidden bg-[#e8e4df]" style={{ borderRadius: "12px", aspectRatio: "16/9" }}>
           <video
             src="/header.mp4"
             autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             className="absolute inset-0 w-full h-full object-cover"
           />
-          {/* Subtle inner shadow */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{ boxShadow: "inset 0 0 40px rgba(0,0,0,0.08)" }}
           />
         </div>
 
-        {/* Content below video */}
         <HeroContent locale={locale} className="mt-8" />
       </section>
     );
@@ -284,7 +283,7 @@ export function Hero() {
   /* ─── Desktop layout (scroll-driven) ─── */
   return (
     <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
-      <section className="sticky top-0 h-[100dvh] w-full overflow-hidden">
+      <section className="sticky top-0 h-[100dvh] w-full overflow-hidden" style={{ backgroundColor: "#e8e4df" }}>
         <video
           ref={videoRef}
           src="/header.mp4"
