@@ -47,8 +47,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} antialiased`}
     >
       <head>
-        {/* Preload hero video for faster first paint */}
-        <link rel="preload" href="/header.mp4" as="video" type="video/mp4" />
+        {/* Preconnect to Vercel CDN for faster asset delivery */}
+        <link rel="dns-prefetch" href="https://www.valtor.io" />
       </head>
       <body>{children}</body>
     </html>

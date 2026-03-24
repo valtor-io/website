@@ -171,6 +171,7 @@ export function Hero() {
   const lastFrameIndex = useRef(-1);
   const rafId = useRef(0);
   const [ready, setReady] = useState(false);
+  const [videoSrc, setVideoSrc] = useState<string | undefined>(undefined);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -179,11 +180,18 @@ export function Hero() {
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
+    // Defer video load until after first paint — page renders instantly
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setVideoSrc("/header.mp4");
+      });
+    });
   }, []);
 
-  // Desktop: extract frames
+  // Desktop: extract frames — only after video src is set and loaded
   useEffect(() => {
     if (typeof window !== "undefined" && window.innerWidth < 768) return;
+    if (!videoSrc) return;
 
     const video = videoRef.current;
     const canvas = canvasRef.current;
@@ -210,7 +218,7 @@ export function Hero() {
     video.addEventListener("loadeddata", onMetadata);
     if (video.readyState >= 2) onMetadata();
     return () => video.removeEventListener("loadeddata", onMetadata);
-  }, []);
+  }, [videoSrc]);
 
   // Desktop: RAF draws frames from scroll
   useEffect(() => {
@@ -261,7 +269,7 @@ export function Hero() {
             only after critical content is painted */}
         <div className="relative overflow-hidden bg-[#e8e4df]" style={{ borderRadius: "12px", aspectRatio: "16/9" }}>
           <video
-            src="/header.mp4"
+            src={videoSrc}
             autoPlay
             muted
             loop
@@ -284,15 +292,17 @@ export function Hero() {
   return (
     <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
       <section className="sticky top-0 h-[100dvh] w-full overflow-hidden" style={{ backgroundColor: "#e8e4df" }}>
-        <video
-          ref={videoRef}
-          src="/header.mp4"
-          muted
-          playsInline
-          preload="auto"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          style={ready ? { display: "none" } : undefined}
-        />
+        {videoSrc && (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            muted
+            playsInline
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={ready ? { display: "none" } : undefined}
+          />
+        )}
 
         <canvas
           ref={canvasRef}
