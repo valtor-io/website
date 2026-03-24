@@ -192,27 +192,27 @@ export function Hero() {
   ];
 
   return (
-    <div ref={containerRef} className="relative" style={{ height: "250vh" }}>
+    <div ref={containerRef} className="relative h-[200vh] md:h-[250vh]">
       <section className="sticky top-0 h-[100dvh] w-full overflow-hidden">
-        {/* Hidden video — only used for frame extraction */}
+        {/* Video — only used for frame extraction */}
         <video
           ref={videoRef}
           src="/header.mp4"
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover md:object-cover object-center"
           style={ready ? { display: "none" } : undefined}
         />
 
-        {/* Canvas — displays pre-extracted frames, zero decode lag */}
+        {/* Canvas — displays pre-extracted frames */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: "cover" }}
         />
 
-        {/* Inward radial gradient mask */}
+        {/* Inward radial gradient mask — tighter on mobile */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -221,62 +221,70 @@ export function Hero() {
           }}
         />
 
-        {/* Edge vignette */}
+        {/* Edge vignette — stronger on mobile for readability */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: `
-              linear-gradient(to bottom, var(--background) 0%, transparent 12%, transparent 85%, var(--background) 100%),
-              linear-gradient(to right, var(--background) 0%, transparent 10%, transparent 90%, var(--background) 100%)
+              linear-gradient(to bottom, var(--background) 0%, transparent 15%, transparent 80%, var(--background) 100%),
+              linear-gradient(to right, var(--background) 0%, transparent 12%, transparent 88%, var(--background) 100%)
             `,
           }}
         />
 
-        {/* Content — directly on top of video, no frost */}
+        {/* Content overlay */}
         <div
           ref={overlayRef}
           className="absolute inset-0 z-10 flex items-center justify-center"
           style={{ opacity: 0, transform: "translateY(24px) translateZ(0)", willChange: "transform, opacity" }}
         >
-          <div className="max-w-[1000px] px-6 w-full">
+          {/* Mobile-only subtle background for readability */}
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{
+              background: "linear-gradient(to bottom, rgba(250,250,249,0.85) 0%, rgba(250,250,249,0.7) 50%, rgba(250,250,249,0.85) 100%)",
+            }}
+          />
+
+          <div className="relative z-10 max-w-[1000px] px-6 w-full">
             <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-[-0.02em] max-w-[20ch]"
+              className="text-2xl md:text-[2.75rem] leading-[1.1] tracking-[-0.02em] max-w-[20ch]"
               style={{ fontFamily: "var(--serif)" }}
             >
               {t(h.headline, locale)}
             </h2>
 
-            <p className="mt-5 text-foreground-muted text-[15px] leading-relaxed max-w-[60ch]">
+            <p className="mt-4 md:mt-5 text-foreground-muted text-[14px] md:text-[15px] leading-relaxed max-w-[60ch]">
               {t(h.subheadline, locale)}
             </p>
 
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border overflow-hidden" style={{ borderRadius: "8px" }}>
+            <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border overflow-hidden" style={{ borderRadius: "8px" }}>
               {kpis.map((kpi) => (
-                <div key={kpi.label} className="bg-surface px-5 py-4">
+                <div key={kpi.label} className="bg-surface px-4 py-3 md:px-5 md:py-4">
                   <span
-                    className="text-xl md:text-2xl tracking-tight text-foreground"
+                    className="text-lg md:text-2xl tracking-tight text-foreground"
                     style={{ fontFamily: "var(--serif)" }}
                   >
                     {kpi.value}
                   </span>
-                  <p className="mt-1 text-[11px] font-mono text-foreground-muted tracking-wide uppercase">
+                  <p className="mt-1 text-[10px] md:text-[11px] font-mono text-foreground-muted tracking-wide uppercase">
                     {kpi.label}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6 md:mt-8">
               <span className="text-accent text-[11px] font-mono tracking-[0.15em] uppercase">
                 {t(h.mission_label, locale)}
               </span>
-              <div className="mt-3 grid md:grid-cols-2 gap-x-8 gap-y-2">
+              <div className="mt-3 grid md:grid-cols-2 gap-x-8 gap-y-1.5 md:gap-y-2">
                 {h.mission_steps.map((step, i) => (
-                  <div key={i} className="flex items-start gap-3 py-1.5">
+                  <div key={i} className="flex items-start gap-3 py-1">
                     <span className="text-accent text-[11px] font-mono mt-0.5 shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="text-foreground-muted text-[13px] leading-relaxed">
+                    <p className="text-foreground-muted text-[12px] md:text-[13px] leading-relaxed">
                       {t(step, locale)}
                     </p>
                   </div>
@@ -284,7 +292,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 md:gap-4">
               <motion.a
                 href="#contact"
                 className="inline-flex items-center justify-center bg-foreground text-background text-[13px] tracking-wide px-7 py-3.5"
