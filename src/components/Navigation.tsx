@@ -63,7 +63,7 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16 md:h-18">
             <a
               href="#"
-              className="text-foreground font-medium tracking-tight text-[15px]"
+              className="text-foreground font-semibold tracking-tight text-[20px]"
             >
               Valtor
               <span className="text-accent">.io</span>

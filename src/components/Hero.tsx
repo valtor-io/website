@@ -337,7 +337,14 @@ export function Hero() {
           className="absolute inset-0 z-10 flex items-center justify-center"
           style={{ opacity: 0, transform: "translateY(24px) translateZ(0)", willChange: "transform, opacity" }}
         >
-          <HeroContent locale={locale} className="max-w-[1000px] px-6 w-full" />
+          {/* Background panel for text legibility */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(250,250,249,0.92) 0%, rgba(250,250,249,0.75) 60%, rgba(250,250,249,0.4) 100%)",
+            }}
+          />
+          <HeroContent locale={locale} className="relative z-10 max-w-[1000px] px-6 w-full" />
         </div>
 
         <div
