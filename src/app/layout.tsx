@@ -24,15 +24,17 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Valtor.io — Management Truth for Mid-Market Companies",
+  title: "Valtor.io — AI-First Business Optimization for Mid-Market Companies",
   description:
-    "Structured management P&L, process intelligence, and monthly steering for DACH mid-market companies. From DATEV compliance to management visibility.",
+    "We create deterministic business truth — structured P&Ls, unified data, process intelligence — so mid-market companies know what is actually broken before deciding what to build. EBITDA and cash flow improvement through structured operational intelligence.",
+  keywords: ["business optimization", "EBITDA improvement", "cash flow optimization", "management P&L", "process intelligence", "mid-market", "DACH", "AI-first"],
   openGraph: {
-    title: "Valtor.io — Management Truth for Mid-Market Companies",
+    title: "Valtor.io — What Before How. Truth Before Automation.",
     description:
-      "Structured management P&L, process intelligence, and monthly steering for DACH mid-market companies.",
+      "AI-first business optimization for mid-market companies. Deterministic financial truth, unified data, and monthly steering intelligence.",
     type: "website",
     locale: "de_DE",
+    alternateLocale: "en_US",
   },
 };
 

@@ -75,19 +75,24 @@ function extractFrames(
 function HeroContent({ locale, className = "" }: { locale: Locale; className?: string }) {
   const h = translations.hero;
   const kpis = [
-    { value: "\u20AC842K", label: t(h.kpi_revenue, locale) },
-    { value: "11.4%", label: t(h.kpi_margin, locale) },
-    { value: "27 Days", label: t(h.kpi_cash, locale) },
-    { value: "68%", label: t(h.kpi_forecast, locale) },
+    { value: "5–15%", label: t(h.kpi_revenue, locale) },
+    { value: "€100K+", label: t(h.kpi_margin, locale) },
+    { value: "€250K+", label: t(h.kpi_cash, locale) },
+    { value: "30", label: t(h.kpi_forecast, locale) },
   ];
 
   return (
     <div className={className}>
       <h2
-        className="text-2xl md:text-[2.75rem] leading-[1.1] tracking-[-0.02em] max-w-[20ch]"
+        className="text-2xl md:text-[2.75rem] leading-[1.1] tracking-[-0.02em] max-w-[28ch]"
         style={{ fontFamily: "var(--serif)" }}
       >
-        {t(h.headline, locale)}
+        {t(h.headline, locale).split("\n").map((line, i) => (
+          <span key={i}>
+            {i > 0 && <br />}
+            {i === 1 ? <span className="italic">{line}</span> : line}
+          </span>
+        ))}
       </h2>
 
       <p className="mt-4 md:mt-5 text-foreground-muted text-[14px] md:text-[15px] leading-relaxed max-w-[60ch]">

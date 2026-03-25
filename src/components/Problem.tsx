@@ -32,6 +32,12 @@ export function Problem() {
           </h2>
         </ScrollReveal>
 
+        <ScrollReveal delay={0.2}>
+          <p className="mt-6 text-foreground-muted text-[14px] md:text-[15px] leading-relaxed max-w-[65ch]">
+            {t(p.intro, locale)}
+          </p>
+        </ScrollReveal>
+
         <StaggerContainer className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-12" staggerDelay={0.1}>
           {p.items.map((point) => (
             <StaggerItem key={point.number}>
