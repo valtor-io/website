@@ -164,14 +164,25 @@ export const translations = {
         },
       },
       {
-        label: { de: "EBITDA & Cashflow", en: "EBITDA & Cash Flow" },
+        label: { de: "EBITDA-Verbesserung", en: "EBITDA Improvement" },
         title: {
           de: "Strukturelle Verbesserung, nicht Buchhaltungstricks",
           en: "Structural improvement, not accounting tricks",
         },
         description: {
-          de: "Unnötige Kosten identifizieren, Margen nach Profit Center optimieren, Cash-Zyklen verkürzen, Order-to-Cash beschleunigen. Typisch 5–15% EBITDA-Verbesserung im ersten Jahr.",
-          en: "Identify unnecessary costs, optimize margins by profit center, shorten cash cycles, accelerate order-to-cash. Typical 5\u201315% EBITDA improvement in year one.",
+          de: "Unnötige Kosten identifizieren, Margen nach Profit Center optimieren, Ressourcenallokation überprüfen, Headcount gegen Geschäftsvolumen abgleichen. Typisch 5–15% EBITDA-Verbesserung im ersten Jahr.",
+          en: "Identify unnecessary costs, optimize margins by profit center, review resource allocation, match headcount to business volume. Typical 5\u201315% EBITDA improvement in year one.",
+        },
+      },
+      {
+        label: { de: "Order-to-Cash", en: "Order-to-Cash" },
+        title: {
+          de: "Vom Auftrag zur Zahlung — schneller, sichtbarer, kontrollierbarer",
+          en: "From order to payment — faster, visible, controllable",
+        },
+        description: {
+          de: "Den gesamten O2C-Prozess neu strukturieren: Fakturierungstiming optimieren, Zahlungsbedingungen standardisieren, AR-Disziplin verbessern, AP-Strategie anpassen. Cash-Zyklen verkürzen und Working Capital freisetzen.",
+          en: "Redesign the full O2C process: optimize invoicing timing, standardize payment terms, improve AR collection discipline, align AP strategy. Shorten cash cycles and unlock trapped working capital.",
         },
       },
       {
@@ -237,8 +248,8 @@ export const translations = {
           en: "Structural EBITDA and cash flow improvement. Unification of all source systems. Event-based process mining. Build dashboards with full drill-down to source transactions.",
         },
         deliverables: {
-          de: ["Kostenreduktions-Maßnahmen", "Vereinheitlichtes Datensystem", "Prozess-Dashboards & Bottleneck-Analyse", "Forecasting-Grundlage"],
-          en: ["Cost reduction initiatives", "Unified data system", "Process dashboards & bottleneck analysis", "Forecasting foundation"],
+          de: ["Kostenreduktions-Maßnahmen", "Order-to-Cash-Optimierung", "Vereinheitlichtes Datensystem", "Prozess-Dashboards & Bottleneck-Analyse"],
+          en: ["Cost reduction initiatives", "Order-to-cash optimization", "Unified data system", "Process dashboards & bottleneck analysis"],
         },
       },
       {
@@ -430,8 +441,8 @@ export const translations = {
         days: "60",
         title: { de: "Datenschicht operativ", en: "Data layer operational" },
         items: {
-          de: ["Alle Quellsysteme verbunden", "Cross-System-Datenmodell live", "Prozess-Bottlenecks sichtbar", "Erste Dashboards mit Drill-Down"],
-          en: ["All source systems connected", "Cross-system data model live", "Process bottlenecks surfaced", "First dashboards with drill-down"],
+          de: ["Alle Quellsysteme verbunden", "Order-to-Cash-Prozess kartiert und optimiert", "Prozess-Bottlenecks und Cash-Verzögerungen sichtbar", "Erste Dashboards mit Drill-Down"],
+          en: ["All source systems connected", "Order-to-cash process mapped and optimized", "Process bottlenecks and cash delays surfaced", "First dashboards with drill-down"],
         },
       },
       {
