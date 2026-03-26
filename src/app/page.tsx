@@ -16,6 +16,7 @@ const Proof = dynamic(() => import("@/components/Proof").then(m => ({ default: m
 const Differentiators = dynamic(() => import("@/components/Differentiators").then(m => ({ default: m.Differentiators })));
 const Audience = dynamic(() => import("@/components/Audience").then(m => ({ default: m.Audience })));
 const Engagement = dynamic(() => import("@/components/Engagement").then(m => ({ default: m.Engagement })));
+const FAQ = dynamic(() => import("@/components/FAQ").then(m => ({ default: m.FAQ })));
 const Contact = dynamic(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 const Footer = dynamic(() => import("@/components/Footer").then(m => ({ default: m.Footer })));
 
@@ -60,8 +61,12 @@ export default function Home() {
 
         {/* 10. Engagement model with pricing */}
         <Engagement />
+        <SectionDivider />
 
-        {/* 11. CTA: diagnostic call */}
+        {/* 11. FAQ */}
+        <FAQ />
+
+        {/* 12. CTA: diagnostic call */}
         <Contact />
       </main>
       <Footer />

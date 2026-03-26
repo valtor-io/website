@@ -465,6 +465,72 @@ export const translations = {
     },
     cta: { de: "Diagnose-Gespräch buchen", en: "Book a diagnostic call" },
   },
+  faq: {
+    label: { de: "Häufige Fragen", en: "FAQ" },
+    h2: { de: "Häufig gestellte Fragen", en: "Frequently asked questions" },
+    items: [
+      {
+        q: {
+          de: "Was genau liefert Valtor.io?",
+          en: "What exactly does Valtor.io deliver?",
+        },
+        a: {
+          de: "Wir liefern ein permanentes operatives Intelligenzsystem: eine strukturierte Management-P&L nach Profit Center, eine vereinheitlichte Datenschicht über alle Ihre Systeme, Prozess-Intelligence mit Event-basierter Analyse und ein monatliches Steering-System, das Ihnen sagt, was als nächstes verbessert werden sollte und warum.",
+          en: "We deliver a permanent operational intelligence system: a structured management P&L by profit center, a unified data layer across all your systems, process intelligence with event-based analysis, and a monthly steering system that tells you what to improve next and why.",
+        },
+      },
+      {
+        q: {
+          de: "Für welche Unternehmen ist Valtor.io geeignet?",
+          en: "What kind of companies is Valtor.io for?",
+        },
+        a: {
+          de: "Mittelständische Unternehmen im DACH-Raum mit €3M–€50M Umsatz: Agenturen, Service-Unternehmen, SaaS-Firmen und gründergeführte Unternehmen, die operativ komplex genug sind, um den Schmerz fragmentierter Daten und fehlender Management-Transparenz zu spüren.",
+          en: "Mid-market companies in the DACH region with €3M–€50M revenue: agencies, service businesses, SaaS companies, and founder-led businesses that are operationally complex enough to feel the pain of fragmented data and missing management transparency.",
+        },
+      },
+      {
+        q: {
+          de: "Wie unterscheidet sich Valtor.io von einer Unternehmensberatung?",
+          en: "How is Valtor.io different from a management consultancy?",
+        },
+        a: {
+          de: "Berater liefern Reports und gehen. Wir bauen permanente Systeme, die Ihnen gehören. Jede Zahl ist bis zur Einzelbuchung nachvollziehbar — keine Schätzungen, keine Black Box. Das System wird jeden Monat präziser und wächst mit Ihrem Unternehmen.",
+          en: "Consultants deliver reports and leave. We build permanent systems that you own. Every number is traceable to the source transaction — no estimates, no black box. The system becomes more precise every month and grows with your business.",
+        },
+      },
+      {
+        q: {
+          de: "Was kostet eine Zusammenarbeit mit Valtor.io?",
+          en: "What does working with Valtor.io cost?",
+        },
+        a: {
+          de: "Die Diagnose kostet €5–15K (4–6 Wochen), der Build €20–50K (8–12 Wochen), und das fortlaufende Steering €3–8K pro Monat. Jede Phase liefert eigenständigen Wert — Sie können nach der Diagnose entscheiden, ob Sie weitergehen.",
+          en: "The diagnostic costs €5–15K (4–6 weeks), the build €20–50K (8–12 weeks), and ongoing steering €3–8K per month. Each phase delivers standalone value — you can decide after the diagnostic whether to continue.",
+        },
+      },
+      {
+        q: {
+          de: "Wie schnell sehe ich erste Ergebnisse?",
+          en: "How quickly will I see results?",
+        },
+        a: {
+          de: "Nach 30 Tagen haben Sie eine vollständige Management-P&L mit identifizierten EBITDA-Chancen (typisch 5–15%). Nach 60 Tagen ist die Datenschicht operativ mit ersten Dashboards. Nach 90 Tagen läuft das komplette Steering-System mit messbarer EBITDA- und Cashflow-Verbesserung.",
+          en: "After 30 days, you have a complete management P&L with identified EBITDA opportunities (typical 5–15%). After 60 days, the data layer is operational with first dashboards. After 90 days, the full steering system is running with measurable EBITDA and cash flow improvement.",
+        },
+      },
+      {
+        q: {
+          de: "Nutzt Valtor.io künstliche Intelligenz?",
+          en: "Does Valtor.io use artificial intelligence?",
+        },
+        a: {
+          de: "Ja, aber anders als die meisten. Wir nutzen AI für Orchestrierung, Datenverarbeitung und Analyse — nicht für die Ergebnisse selbst. Alle finanziellen Outputs sind deterministisch: regelbasiert, nachvollziehbar, reproduzierbar. Keine probabilistischen AI-Schätzungen in Ihren Managementzahlen.",
+          en: "Yes, but differently from most. We use AI for orchestration, data processing, and analysis — not for the outputs themselves. All financial outputs are deterministic: rule-based, traceable, reproducible. No probabilistic AI estimates in your management numbers.",
+        },
+      },
+    ],
+  },
   footer: {
     tagline: {
       de: "AI-first Business Optimization für den Mittelstand.",
