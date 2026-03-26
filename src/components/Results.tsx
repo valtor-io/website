@@ -62,7 +62,7 @@ export function Results() {
                       style={{ fontFamily: "var(--serif)" }}
                     >
                       {isCountable ? (
-                        <CountUp target={parseInt(result.metric)} suffix="%" />
+                        <CountUp target={parseInt(result.metric)} suffix={"suffix" in result ? (result.suffix as string) : "%"} />
                       ) : (
                         result.metric
                       )}

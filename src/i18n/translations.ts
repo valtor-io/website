@@ -282,6 +282,7 @@ export const translations = {
       },
       {
         metric: "30",
+        suffix: "",
         label: { de: "Tage bis zur ersten Management-P&L", en: "Days to first management P&L" },
         description: {
           de: "Nach der Diagnose sehen Sie Ihr Unternehmen zum ersten Mal durch eine strukturierte Management-Brille mit Drill-Down bis zur Einzelbuchung.",
