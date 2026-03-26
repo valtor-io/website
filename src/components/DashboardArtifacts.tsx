@@ -7,7 +7,7 @@ export function DashboardArtifacts({ locale }: { locale: Locale }) {
   const v = translations.hero_visual;
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       {/* Faint dot grid background */}
       <div
         className="absolute inset-0 opacity-[0.03]"
