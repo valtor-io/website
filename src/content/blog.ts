@@ -43,7 +43,7 @@ export interface BlogPost {
 export const posts: BlogPost[] = [
   {
     slug: "bwa-vs-management-pnl",
-    publishedAt: "2026-03-26",
+    publishedAt: "2026-02-12",
     readingTime: { de: "8 Min", en: "8 min" },
     category: { de: "Managementwahrheit", en: "Management Truth" },
     title: {
@@ -186,7 +186,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "versteckte-margen-lecks",
-    publishedAt: "2026-03-27",
+    publishedAt: "2026-02-19",
     readingTime: { de: "10 Min", en: "10 min" },
     category: { de: "EBITDA-Optimierung", en: "EBITDA Optimization" },
     title: {
@@ -298,7 +298,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "daten-vor-ki",
-    publishedAt: "2026-03-28",
+    publishedAt: "2026-02-26",
     readingTime: { de: "9 Min", en: "9 min" },
     category: { de: "Datenstrategie", en: "Data Strategy" },
     title: {
@@ -446,7 +446,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "eu-ai-act-datengrundlage",
-    publishedAt: "2026-03-29",
+    publishedAt: "2026-03-05",
     readingTime: { de: "8 Min", en: "8 min" },
     category: { de: "Regulierung & Daten", en: "Regulation & Data" },
     title: {
@@ -563,7 +563,7 @@ export const posts: BlogPost[] = [
   },
   {
     slug: "whale-curve-kundenrentabilitaet",
-    publishedAt: "2026-03-30",
+    publishedAt: "2026-03-12",
     readingTime: { de: "9 Min", en: "9 min" },
     category: { de: "Profitabilität", en: "Profitability" },
     title: {
