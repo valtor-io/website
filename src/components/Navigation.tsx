@@ -8,6 +8,7 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
@@ -22,7 +23,9 @@ function NavLink({ href, label }: { href: string; label: string }) {
 
 export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { locale, setLocale } = useLocale();
+  const { locale } = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const { scrollY } = useScroll();
   const hasAnimated = useRef(false);
 
@@ -75,7 +78,10 @@ export function Navigation() {
               ))}
 
               <button
-                onClick={() => setLocale(locale === "de" ? "en" : "de")}
+                onClick={() => {
+                  const newLocale = locale === "de" ? "en" : "de";
+                  router.push(pathname.replace(/^\/(de|en)/, `/${newLocale}`));
+                }}
                 className="text-[11px] font-mono tracking-wider text-foreground-subtle hover:text-foreground transition-colors duration-200 border border-border px-2.5 py-1 cursor-pointer hover:border-foreground-subtle"
                 style={{ borderRadius: "3px" }}
               >
@@ -99,7 +105,10 @@ export function Navigation() {
 
             <div className="flex items-center gap-3 md:hidden">
               <button
-                onClick={() => setLocale(locale === "de" ? "en" : "de")}
+                onClick={() => {
+                  const newLocale = locale === "de" ? "en" : "de";
+                  router.push(pathname.replace(/^\/(de|en)/, `/${newLocale}`));
+                }}
                 className="text-[11px] font-mono tracking-wider text-foreground-subtle hover:text-foreground transition-colors duration-200 border border-border px-2.5 py-1 cursor-pointer"
                 style={{ borderRadius: "3px" }}
               >
