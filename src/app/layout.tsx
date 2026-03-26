@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, DM_Mono, Playfair_Display } from "next/font/google";
+import { Analytics } from "@/components/Analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -68,6 +69,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
   },
   other: {
     "theme-color": "#FAFAF9",
@@ -160,7 +164,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
