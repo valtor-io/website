@@ -160,12 +160,9 @@ function HeroContent({ locale, className = "" }: { locale: Locale; className?: s
   );
 }
 
-/* ─── Mobile Hero: still frame + scroll-driven parallax ─── */
+/* ─── Mobile Hero: video first-frame + scroll-driven parallax ─── */
 function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const mobileVideoRef = useRef<HTMLVideoElement>(null);
-  const [posterReady, setPosterReady] = useState(false);
-  const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -176,46 +173,8 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
   const imgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const imgOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.85, 0.5]);
 
-  useEffect(() => {
-    if (!videoSrc || posterReady) return;
-    const v = mobileVideoRef.current;
-    if (!v) return;
-
-    const onSeeked = () => {
-      const c = document.createElement("canvas");
-      c.width = v.videoWidth || 1280;
-      c.height = v.videoHeight || 720;
-      const ctx = c.getContext("2d", { alpha: false });
-      if (ctx) {
-        ctx.drawImage(v, 0, 0, c.width, c.height);
-        setPosterSrc(c.toDataURL("image/webp", 0.85));
-        setPosterReady(true);
-      }
-    };
-
-    const onLoaded = () => {
-      v.currentTime = v.duration * 0.35;
-      v.addEventListener("seeked", onSeeked, { once: true });
-    };
-
-    if (v.readyState >= 2) onLoaded();
-    else v.addEventListener("loadeddata", onLoaded, { once: true });
-  }, [videoSrc, posterReady]);
-
   return (
     <section ref={sectionRef} className="pt-24 pb-16 px-6">
-      {videoSrc && !posterReady && (
-        <video
-          ref={mobileVideoRef}
-          src={videoSrc}
-          muted
-          playsInline
-          preload="auto"
-          className="sr-only"
-          aria-hidden="true"
-        />
-      )}
-
       <motion.div
         className="relative overflow-hidden bg-[#e8e4df]"
         style={{ borderRadius: "12px", aspectRatio: "16/9", opacity: imgOpacity }}
@@ -224,11 +183,18 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
           className="absolute inset-0"
           style={{ scale: imgScale, y: imgY, willChange: "transform" }}
         >
-          {posterSrc ? (
-            <img
-              src={posterSrc}
-              alt="Valtor.io | AI-first business optimization"
+          {/* Video paused at first frame — iOS/Android show poster natively.
+              preload="metadata" loads just enough for the first frame.
+              No autoPlay, no loop — just a still with scroll parallax. */}
+          {videoSrc ? (
+            <video
+              src={videoSrc}
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="Valtor.io | AI-first business optimization"
               className="w-full h-full object-cover"
+              style={{ pointerEvents: "none" }}
             />
           ) : (
             <div className="w-full h-full bg-[#e8e4df]" />
