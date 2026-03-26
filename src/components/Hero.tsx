@@ -174,14 +174,17 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
   const imgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const imgOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.85, 0.5]);
 
-  // Force-seek to first frame — Android Chrome won't render it with just preload="metadata"
+  // Slow autoplay loop — plays at half speed for a living, breathing hero
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const onLoaded = () => { video.currentTime = 0.001; };
-    video.addEventListener("loadedmetadata", onLoaded);
-    if (video.readyState >= 1) onLoaded();
-    return () => video.removeEventListener("loadedmetadata", onLoaded);
+    const onCanPlay = () => {
+      video.playbackRate = 0.5;
+      video.play().catch(() => {});
+    };
+    video.addEventListener("canplay", onCanPlay);
+    if (video.readyState >= 3) onCanPlay();
+    return () => video.removeEventListener("canplay", onCanPlay);
   }, [videoSrc]);
 
   return (
@@ -200,7 +203,9 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
               src={videoSrc}
               muted
               playsInline
-              preload="metadata"
+              loop
+              autoPlay
+              preload="auto"
               aria-label="Valtor.io | AI-first business optimization"
               className="w-full h-full object-cover"
               style={{ pointerEvents: "none" }}
