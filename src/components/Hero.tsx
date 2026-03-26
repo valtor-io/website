@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import {
   motion,
   useScroll,
+  useTransform,
   useMotionValueEvent,
 } from "framer-motion";
 import { useLocale } from "@/i18n/LanguageContext";
@@ -266,28 +267,107 @@ export function Hero() {
     }
   });
 
-  /* ─── Mobile layout ─── */
+  /* ─── Mobile layout: still frame + scroll-driven parallax ─── */
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
+  const [posterReady, setPosterReady] = useState(false);
+  const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
+
+  const { scrollYProgress: mobileScroll } = useScroll({
+    target: mobileRef,
+    offset: ["start start", "end start"],
+  });
+
+  const mobileScale = useTransform(mobileScroll, [0, 1], [1, 1.15]);
+  const mobileY = useTransform(mobileScroll, [0, 1], [0, -30]);
+  const mobileOpacity = useTransform(mobileScroll, [0, 0.6, 1], [1, 0.85, 0.5]);
+
+  // Extract a mid-point frame from the video as a still poster
+  const extractPoster = useCallback(() => {
+    if (!videoSrc || posterReady) return;
+    const v = mobileVideoRef.current;
+    if (!v) return;
+
+    const onSeeked = () => {
+      const c = document.createElement("canvas");
+      c.width = v.videoWidth || 1280;
+      c.height = v.videoHeight || 720;
+      const ctx = c.getContext("2d", { alpha: false });
+      if (ctx) {
+        ctx.drawImage(v, 0, 0, c.width, c.height);
+        setPosterSrc(c.toDataURL("image/webp", 0.85));
+        setPosterReady(true);
+      }
+      v.removeEventListener("seeked", onSeeked);
+    };
+
+    const onLoaded = () => {
+      v.currentTime = v.duration * 0.35;
+      v.addEventListener("seeked", onSeeked, { once: true });
+    };
+
+    if (v.readyState >= 2) {
+      onLoaded();
+    } else {
+      v.addEventListener("loadeddata", onLoaded, { once: true });
+    }
+  }, [videoSrc, posterReady]);
+
+  useEffect(() => {
+    if (isMobile && videoSrc) extractPoster();
+  }, [isMobile, videoSrc, extractPoster]);
+
   if (isMobile) {
     return (
-      <section className="pt-24 pb-16 px-6">
-        {/* Video card — uses preload="none" + autoPlay so browser starts downloading
-            only after critical content is painted */}
-        <div className="relative overflow-hidden bg-[#e8e4df]" style={{ borderRadius: "12px", aspectRatio: "16/9" }}>
+      <section ref={mobileRef} className="pt-24 pb-16 px-6">
+        {/* Hidden video for frame extraction only */}
+        {videoSrc && !posterReady && (
           <video
+            ref={mobileVideoRef}
             src={videoSrc}
-            autoPlay
             muted
-            loop
             playsInline
-            preload="metadata"
-            aria-label="Valtor.io | AI-first business optimization visualization"
-            className="absolute inset-0 w-full h-full object-cover"
+            preload="auto"
+            className="sr-only"
+            aria-hidden="true"
           />
+        )}
+
+        {/* Still frame with scroll-driven parallax + scale */}
+        <motion.div
+          className="relative overflow-hidden bg-[#e8e4df]"
+          style={{
+            borderRadius: "12px",
+            aspectRatio: "16/9",
+            opacity: mobileOpacity,
+          }}
+        >
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              scale: mobileScale,
+              y: mobileY,
+              willChange: "transform",
+            }}
+          >
+            {posterSrc ? (
+              <img
+                src={posterSrc}
+                alt="Valtor.io | AI-first business optimization"
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full bg-[#e8e4df]" />
+            )}
+          </motion.div>
           <div
             className="absolute inset-0 pointer-events-none"
-            style={{ boxShadow: "inset 0 0 40px rgba(0,0,0,0.08)" }}
+            style={{
+              background: "linear-gradient(to bottom, transparent 60%, rgba(250,250,249,0.3) 100%)",
+              boxShadow: "inset 0 0 40px rgba(0,0,0,0.06)",
+            }}
           />
-        </div>
+        </motion.div>
 
         <HeroContent locale={locale} className="mt-8" />
       </section>
