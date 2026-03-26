@@ -163,6 +163,7 @@ function HeroContent({ locale, className = "" }: { locale: Locale; className?: s
 /* ─── Mobile Hero: video first-frame + scroll-driven parallax ─── */
 function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -172,6 +173,16 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const imgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
   const imgOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.85, 0.5]);
+
+  // Force-seek to first frame — Android Chrome won't render it with just preload="metadata"
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onLoaded = () => { video.currentTime = 0.001; };
+    video.addEventListener("loadedmetadata", onLoaded);
+    if (video.readyState >= 1) onLoaded();
+    return () => video.removeEventListener("loadedmetadata", onLoaded);
+  }, [videoSrc]);
 
   return (
     <section ref={sectionRef} className="pt-24 pb-16 px-6">
@@ -183,11 +194,9 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
           className="absolute inset-0"
           style={{ scale: imgScale, y: imgY, willChange: "transform" }}
         >
-          {/* Video paused at first frame — iOS/Android show poster natively.
-              preload="metadata" loads just enough for the first frame.
-              No autoPlay, no loop — just a still with scroll parallax. */}
           {videoSrc ? (
             <video
+              ref={videoRef}
               src={videoSrc}
               muted
               playsInline
