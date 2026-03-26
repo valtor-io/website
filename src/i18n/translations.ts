@@ -16,8 +16,8 @@ export const translations = {
       en: "Most businesses optimize blind.\nValtor.io shows what\u2019s actually broken first.",
     },
     subheadline: {
-      de: "Wir sind eine AI-first Business Optimization Agency. Bevor wir etwas bauen, schaffen wir deterministische Wahrheit: strukturierte P&L, vereinheitlichte Daten, Prozess-Intelligence — damit Sie wissen, was sich lohnt zu verbessern, bevor Sie investieren.",
-      en: "We\u2019re an AI-first business optimization agency. Before building anything, we create deterministic truth: structured P&Ls, unified data, process intelligence — so you know what\u2019s worth fixing before you invest.",
+      de: "Wir sind eine AI-first Business Optimization Agency. Bevor wir etwas bauen, schaffen wir deterministische Wahrheit: strukturierte P&L, vereinheitlichte Daten, Prozess-Intelligence. Damit Sie wissen, was sich lohnt zu verbessern, bevor Sie investieren.",
+      en: "We\u2019re an AI-first business optimization agency. Before building anything, we create deterministic truth: structured P&Ls, unified data, process intelligence. So you know what\u2019s worth fixing before you invest.",
     },
     kpi_revenue: { de: "EBITDA-Verbesserung", en: "EBITDA Improvement" },
     kpi_margin: { de: "Marge aufgedeckt", en: "Margin Recovered" },
@@ -26,16 +26,16 @@ export const translations = {
     mission_label: { de: "Was wir liefern", en: "What we deliver" },
     mission_steps: [
       {
-        de: "Deterministische Finanz-Wahrheit — P&L nach Profit Center, Produktlinie und Segment",
-        en: "Deterministic financial truth — P&L by profit center, product line, and segment",
+        de: "Deterministische Finanz-Wahrheit: P&L nach Profit Center, Produktlinie und Segment",
+        en: "Deterministic financial truth: P&L by profit center, product line, and segment",
       },
       {
         de: "EBITDA- und Cashflow-Verbesserung durch strukturelle Optimierung",
         en: "EBITDA and cash flow improvement through structural optimization",
       },
       {
-        de: "Vereinheitlichte Daten über alle Systeme — eine Quelle der Wahrheit",
-        en: "Unified data across all systems — one source of truth",
+        de: "Vereinheitlichte Daten über alle Systeme. Eine Quelle der Wahrheit",
+        en: "Unified data across all systems. One source of truth",
       },
       {
         de: "Monatliche Steuerungsintelligenz: was verbessern, warum, in welcher Reihenfolge",
@@ -79,8 +79,8 @@ export const translations = {
           en: "Data in 10+ systems, nothing connected",
         },
         description: {
-          de: "CRM, HR, Buchhaltung, Projektmanagement — alle getrennt. Keine einheitliche Sicht. Cashflow-Nachverfolgung erfordert Tabellenkalkulations-Roulette.",
-          en: "CRM, HR, accounting, project management — all separate. No unified view. Cash flow tracing requires spreadsheet roulette.",
+          de: "CRM, HR, Buchhaltung, Projektmanagement: alle getrennt. Keine einheitliche Sicht. Cashflow-Nachverfolgung erfordert Tabellenkalkulations-Roulette.",
+          en: "CRM, HR, accounting, project management: all separate. No unified view. Cash flow tracing requires spreadsheet roulette.",
         },
       },
       {
@@ -90,8 +90,8 @@ export const translations = {
           en: "Meetings run on opinions, not evidence",
         },
         description: {
-          de: "Sie haben Dashboards, aber die sagen Ihnen nicht, was zu tun ist. Entscheidungen setzen sich durch, weil jemand laut ist — nicht weil Daten dahinterstehen.",
-          en: "You have dashboards, but they don\u2019t tell you what to do. Decisions stick because someone is loud — not because the data backs them.",
+          de: "Sie haben Dashboards, aber die sagen Ihnen nicht, was zu tun ist. Entscheidungen setzen sich durch, weil jemand laut ist, nicht weil Daten dahinterstehen.",
+          en: "You have dashboards, but they don\u2019t tell you what to do. Decisions stick because someone is loud, not because the data backs them.",
         },
       },
       {
@@ -177,8 +177,8 @@ export const translations = {
       {
         label: { de: "Order-to-Cash", en: "Order-to-Cash" },
         title: {
-          de: "Vom Auftrag zur Zahlung — schneller, sichtbarer, kontrollierbarer",
-          en: "From order to payment — faster, visible, controllable",
+          de: "Vom Auftrag zur Zahlung: schneller, sichtbarer, kontrollierbarer",
+          en: "From order to payment: faster, visible, controllable",
         },
         description: {
           de: "Den gesamten O2C-Prozess neu strukturieren: Fakturierungstiming optimieren, Zahlungsbedingungen standardisieren, AR-Disziplin verbessern, AP-Strategie anpassen. Cash-Zyklen verkürzen und Working Capital freisetzen.",
@@ -192,8 +192,8 @@ export const translations = {
           en: "All systems connected, one source of truth",
         },
         description: {
-          de: "CRM, Buchhaltung, HR, Fakturierung, Projektmanagement — verknüpft über ein einheitliches ID-Schema. Cross-System-Traceability vom Lead bis zur Zahlung.",
-          en: "CRM, accounting, HR, invoicing, project management — linked through a unified ID schema. Cross-system traceability from lead to payment.",
+          de: "CRM, Buchhaltung, HR, Fakturierung, Projektmanagement, verknüpft über ein einheitliches ID-Schema. Cross-System-Traceability vom Lead bis zur Zahlung.",
+          en: "CRM, accounting, HR, invoicing, project management, linked through a unified ID schema. Cross-system traceability from lead to payment.",
         },
       },
       {
@@ -210,8 +210,8 @@ export const translations = {
       {
         label: { de: "Monatliches Steering", en: "Monthly Steering" },
         title: {
-          de: "Jeden Monat wissen, was zu tun ist — und warum",
-          en: "Know what to do every month — and why",
+          de: "Jeden Monat wissen, was zu tun ist. Und warum",
+          en: "Know what to do every month. And why",
         },
         description: {
           de: "Strukturierter monatlicher Report mit Varianzanalyse, Prozess-Performance, dynamischem Forecasting und priorisiertem Verbesserungsplan. Das Steering-Meeting wird zum Kern Ihrer Unternehmenssteuerung.",
@@ -285,7 +285,7 @@ export const translations = {
         label: { de: "Tage bis zur ersten Management-P&L", en: "Days to first management P&L" },
         description: {
           de: "Nach der Diagnose sehen Sie Ihr Unternehmen zum ersten Mal durch eine strukturierte Management-Brille mit Drill-Down bis zur Einzelbuchung.",
-          en: "After diagnosis, you see your business through a structured management lens for the first time — with drill-down to every transaction.",
+          en: "After diagnosis, you see your business through a structured management lens for the first time, with drill-down to every transaction.",
         },
       },
       {
@@ -313,6 +313,10 @@ export const translations = {
     h2_line3: { de: "Automatisierung.", en: "automation." },
     typical_label: { de: "Typisch", en: "Typical" },
     valtor_label: { de: "Valtor", en: "Valtor" },
+    unique_angle: {
+      de: "Ihr Prozess- und Technikteam versteht keine GuV. Ihr Finance versteht keine Prozesse. Wir sind Buchhalter im Herzen und Operateure in der Praxis. Das ist der Unterschied.",
+      en: "Your process and tech people don't understand P&L. Your finance team doesn't understand processes. We are accountants at heart and operators in practice. That's the difference.",
+    },
     items: [
       {
         category: { de: "AI-Agenturen", en: "AI Agencies" },
@@ -355,8 +359,8 @@ export const translations = {
     h2_line2: { de: "ihre Komplexität", en: "have outgrown their" },
     h2_line3: { de: "überwachsen haben.", en: "own complexity." },
     body1: {
-      de: "Agenturen, Service-Unternehmen, SaaS-Firmen und gründergeführte Unternehmen im DACH-Raum mit €3M–€50M Umsatz — operativ komplex genug, um den Schmerz zu spüren, aber ohne schwere ERP-Implementierung.",
-      en: "Agencies, service businesses, SaaS companies, and founder-led businesses in the DACH region with \u20AC3M\u2013\u20AC50M revenue — operationally complex enough to feel the pain, but without heavy ERP implementation.",
+      de: "Agenturen, Service-Unternehmen, SaaS-Firmen und gründergeführte Unternehmen im DACH-Raum mit €3M–€50M Umsatz. Operativ komplex genug, um den Schmerz zu spüren, aber ohne schwere ERP-Implementierung.",
+      en: "Agencies, service businesses, SaaS companies, and founder-led businesses in the DACH region with \u20AC3M\u2013\u20AC50M revenue. Operationally complex enough to feel the pain, but without heavy ERP implementation.",
     },
     body2: {
       de: "Unternehmen mit mehreren Produktlinien, Geschäftsbereichen oder Standorten, deren Reporting-Komplexität schneller gewachsen ist als ihre Fähigkeit, evidenzbasierte Entscheidungen zu treffen.",
@@ -385,8 +389,8 @@ export const translations = {
         en: "We don\u2019t know where cash leaks between delivery and payment.",
       },
       {
-        de: "Wir hatten ein BI-Projekt — Dashboards stehen, aber sie sagen uns nicht, was wir tun sollen.",
-        en: "We had a BI project — dashboards are up but they don\u2019t tell us what to do.",
+        de: "Wir hatten ein BI-Projekt. Dashboards stehen, aber sie sagen uns nicht, was wir tun sollen.",
+        en: "We had a BI project. Dashboards are up but they don\u2019t tell us what to do.",
       },
     ],
   },
@@ -400,8 +404,8 @@ export const translations = {
         price: "€5–15K",
         duration: { de: "4–6 Wochen", en: "4\u20136 weeks" },
         description: {
-          de: "Geschäftsmodell-Audit, P&L-Rekonstruktion, System-Audit, EBITDA-Roadmap. Sie erhalten sofort Klarheit — selbst wenn Sie nicht weitergehen.",
-          en: "Business model audit, P&L reconstruction, system audit, EBITDA roadmap. You get immediate clarity — even if you don\u2019t proceed.",
+          de: "Geschäftsmodell-Audit, P&L-Rekonstruktion, System-Audit, EBITDA-Roadmap. Sie erhalten sofort Klarheit, selbst wenn Sie nicht weitergehen.",
+          en: "Business model audit, P&L reconstruction, system audit, EBITDA roadmap. You get immediate clarity, even if you don\u2019t proceed.",
         },
       },
       {
@@ -460,8 +464,8 @@ export const translations = {
     h2_line1: { de: "Lassen Sie uns Ihr", en: "Let\u2019s diagnose" },
     h2_line2: { de: "Unternehmen diagnostizieren.", en: "your business." },
     body: {
-      de: "In 30 Minuten zeigen wir Ihnen, welche versteckten EBITDA- und Cashflow-Chancen in Ihrem Unternehmen liegen — und was der erste Schritt wäre. Keine Verpflichtung. Kein Verkaufsgespräch. Nur Substanz.",
-      en: "In 30 minutes, we\u2019ll show you what hidden EBITDA and cash flow opportunities exist in your business — and what the first step would be. No commitment. No sales pitch. Just substance.",
+      de: "In 30 Minuten zeigen wir Ihnen, welche versteckten EBITDA- und Cashflow-Chancen in Ihrem Unternehmen liegen. Und was der erste Schritt wäre. Keine Verpflichtung. Kein Verkaufsgespräch. Nur Substanz.",
+      en: "In 30 minutes, we\u2019ll show you what hidden EBITDA and cash flow opportunities exist in your business. And what the first step would be. No commitment. No sales pitch. Just substance.",
     },
     cta: { de: "Diagnose-Gespräch buchen", en: "Book a diagnostic call" },
   },
@@ -495,8 +499,8 @@ export const translations = {
           en: "How is Valtor.io different from a management consultancy?",
         },
         a: {
-          de: "Berater liefern Reports und gehen. Wir bauen permanente Systeme, die Ihnen gehören. Jede Zahl ist bis zur Einzelbuchung nachvollziehbar — keine Schätzungen, keine Black Box. Das System wird jeden Monat präziser und wächst mit Ihrem Unternehmen.",
-          en: "Consultants deliver reports and leave. We build permanent systems that you own. Every number is traceable to the source transaction — no estimates, no black box. The system becomes more precise every month and grows with your business.",
+          de: "Berater liefern Reports und gehen. Wir bauen permanente Systeme, die Ihnen gehören. Jede Zahl ist bis zur Einzelbuchung nachvollziehbar. Keine Schätzungen, keine Black Box. Das System wird jeden Monat präziser und wächst mit Ihrem Unternehmen.",
+          en: "Consultants deliver reports and leave. We build permanent systems that you own. Every number is traceable to the source transaction. No estimates, no black box. The system becomes more precise every month and grows with your business.",
         },
       },
       {
@@ -505,8 +509,8 @@ export const translations = {
           en: "What does working with Valtor.io cost?",
         },
         a: {
-          de: "Die Diagnose kostet €5–15K (4–6 Wochen), der Build €20–50K (8–12 Wochen), und das fortlaufende Steering €3–8K pro Monat. Jede Phase liefert eigenständigen Wert — Sie können nach der Diagnose entscheiden, ob Sie weitergehen.",
-          en: "The diagnostic costs €5–15K (4–6 weeks), the build €20–50K (8–12 weeks), and ongoing steering €3–8K per month. Each phase delivers standalone value — you can decide after the diagnostic whether to continue.",
+          de: "Die Diagnose kostet €5–15K (4–6 Wochen), der Build €20–50K (8–12 Wochen), und das fortlaufende Steering €3–8K pro Monat. Jede Phase liefert eigenständigen Wert. Sie können nach der Diagnose entscheiden, ob Sie weitergehen.",
+          en: "The diagnostic costs €5–15K (4–6 weeks), the build €20–50K (8–12 weeks), and ongoing steering €3–8K per month. Each phase delivers standalone value. You can decide after the diagnostic whether to continue.",
         },
       },
       {
@@ -525,8 +529,8 @@ export const translations = {
           en: "Does Valtor.io use artificial intelligence?",
         },
         a: {
-          de: "Ja, aber anders als die meisten. Wir nutzen AI für Orchestrierung, Datenverarbeitung und Analyse — nicht für die Ergebnisse selbst. Alle finanziellen Outputs sind deterministisch: regelbasiert, nachvollziehbar, reproduzierbar. Keine probabilistischen AI-Schätzungen in Ihren Managementzahlen.",
-          en: "Yes, but differently from most. We use AI for orchestration, data processing, and analysis — not for the outputs themselves. All financial outputs are deterministic: rule-based, traceable, reproducible. No probabilistic AI estimates in your management numbers.",
+          de: "Ja, aber anders als die meisten. Wir nutzen AI für Orchestrierung, Datenverarbeitung und Analyse, nicht für die Ergebnisse selbst. Alle finanziellen Outputs sind deterministisch: regelbasiert, nachvollziehbar, reproduzierbar. Keine probabilistischen AI-Schätzungen in Ihren Managementzahlen.",
+          en: "Yes, but differently from most. We use AI for orchestration, data processing, and analysis, not for the outputs themselves. All financial outputs are deterministic: rule-based, traceable, reproducible. No probabilistic AI estimates in your management numbers.",
         },
       },
     ],

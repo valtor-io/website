@@ -31,6 +31,15 @@ export function Differentiators() {
           </h2>
         </ScrollReveal>
 
+        <ScrollReveal delay={0.2}>
+          <p
+            className="mt-8 text-foreground text-[15px] md:text-[17px] leading-relaxed max-w-[60ch] italic"
+            style={{ fontFamily: "var(--serif)" }}
+          >
+            {t(d.unique_angle, locale)}
+          </p>
+        </ScrollReveal>
+
         <StaggerContainer className="mt-16 space-y-0" staggerDelay={0.12}>
           {d.items.map((comp, i) => (
             <StaggerItem key={i}>

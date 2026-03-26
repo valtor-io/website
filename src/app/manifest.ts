@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Valtor.io — AI-First Business Optimization",
+    name: "Valtor.io | AI-First Business Optimization",
     short_name: "Valtor.io",
     description:
       "Deterministic business truth for mid-market companies. Structured P&Ls, unified data, process intelligence.",

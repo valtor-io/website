@@ -20,13 +20,13 @@ export async function generateMetadata({
     metadataBase: new URL("https://www.valtor.io"),
     title: {
       default: isDE
-        ? "Valtor.io — AI-First Business Optimization für den Mittelstand"
-        : "Valtor.io — AI-First Business Optimization for Mid-Market Companies",
+        ? "Valtor.io | AI-First Business Optimization für den Mittelstand"
+        : "Valtor.io | AI-First Business Optimization for Mid-Market Companies",
       template: "%s | Valtor.io",
     },
     description: isDE
-      ? "Wir schaffen deterministische Geschäftswahrheit — strukturierte P&Ls, vereinheitlichte Daten, Prozess-Intelligence — damit mittelständische Unternehmen wissen, was tatsächlich kaputt ist, bevor sie entscheiden, was gebaut werden soll."
-      : "We create deterministic business truth — structured P&Ls, unified data, process intelligence — so mid-market companies know what is actually broken before deciding what to build.",
+      ? "Wir schaffen deterministische Geschäftswahrheit: strukturierte P&Ls, vereinheitlichte Daten, Prozess-Intelligence. Damit mittelständische Unternehmen wissen, was tatsächlich kaputt ist, bevor sie entscheiden, was gebaut werden soll."
+      : "We create deterministic business truth: structured P&Ls, unified data, process intelligence. So mid-market companies know what is actually broken before deciding what to build.",
     keywords: isDE
       ? ["Geschäftsoptimierung", "EBITDA-Verbesserung", "Cashflow-Optimierung", "Management-P&L", "Prozess-Intelligence", "Mittelstand", "DACH", "AI-first"]
       : ["business optimization", "EBITDA improvement", "cash flow optimization", "management P&L", "process intelligence", "mid-market", "DACH", "AI-first"],
@@ -42,8 +42,8 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isDE
-        ? "Valtor.io — Was vor Wie. Wahrheit vor Automatisierung."
-        : "Valtor.io — What Before How. Truth Before Automation.",
+        ? "Valtor.io | Was vor Wie. Wahrheit vor Automatisierung."
+        : "Valtor.io | What Before How. Truth Before Automation.",
       description: isDE
         ? "AI-first Business Optimization für den Mittelstand. Deterministische Finanzwahrheit, vereinheitlichte Daten und monatliche Steuerungsintelligenz."
         : "AI-first business optimization for mid-market companies. Deterministic financial truth, unified data, and monthly steering intelligence.",
@@ -56,8 +56,8 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: isDE
-        ? "Valtor.io — AI-First Business Optimization"
-        : "Valtor.io — AI-First Business Optimization",
+        ? "Valtor.io | AI-First Business Optimization"
+        : "Valtor.io | AI-First Business Optimization",
       description: isDE
         ? "Deterministische Geschäftswahrheit für den Mittelstand. Strukturierte P&Ls, vereinheitlichte Daten, Prozess-Intelligence."
         : "Deterministic business truth for mid-market companies. Structured P&Ls, unified data, process intelligence.",
@@ -263,7 +263,7 @@ function buildJsonLd(locale: string) {
       },
       {
         "@type": "VideoObject",
-        name: "Valtor.io — AI-First Business Optimization",
+        name: "Valtor.io | AI-First Business Optimization",
         description: isDE
           ? "Deterministische Geschäftswahrheit für den Mittelstand: strukturierte P&Ls, vereinheitlichte Daten, Prozess-Intelligence."
           : "Deterministic business truth for mid-market companies: structured P&Ls, unified data, process intelligence.",

@@ -12,8 +12,8 @@ export async function generateMetadata({
   const isDE = locale === "de";
   return {
     title: isDE
-      ? "Blog — Einblicke in datengetriebene Unternehmenssteuerung | Valtor.io"
-      : "Blog — Insights on Data-Driven Business Steering | Valtor.io",
+      ? "Blog: Einblicke in datengetriebene Unternehmenssteuerung | Valtor.io"
+      : "Blog: Insights on Data-Driven Business Steering | Valtor.io",
     description: isDE
       ? "Einblicke in Business Optimization, Management-P&L, operative Intelligenz und datengetriebene Unternehmenssteuerung für den Mittelstand."
       : "Insights on business optimization, management P&L, operational intelligence, and data-driven steering for mid-market companies.",

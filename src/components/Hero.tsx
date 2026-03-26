@@ -280,7 +280,7 @@ export function Hero() {
             loop
             playsInline
             preload="metadata"
-            aria-label="Valtor.io — AI-first business optimization visualization"
+            aria-label="Valtor.io | AI-first business optimization visualization"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
@@ -314,7 +314,7 @@ export function Hero() {
         <canvas
           ref={canvasRef}
           role="img"
-          aria-label="Valtor.io — deterministic business optimization for mid-market companies"
+          aria-label="Valtor.io | deterministic business optimization for mid-market companies"
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: "cover" }}
         />
