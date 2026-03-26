@@ -160,7 +160,7 @@ function HeroContent({ locale, className = "" }: { locale: Locale; className?: s
   );
 }
 
-/* ─── Mobile Hero: video first-frame + scroll-driven parallax ─── */
+/* ─── Mobile Hero: full-bleed cinematic video + content ─── */
 function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -170,11 +170,10 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
     offset: ["start start", "end start"],
   });
 
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const imgY = useTransform(scrollYProgress, [0, 1], [0, -30]);
-  const imgOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.85, 0.5]);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const videoY = useTransform(scrollYProgress, [0, 1], [0, -40]);
 
-  // Slow autoplay loop — plays at half speed for a living, breathing hero
+  // Play once at half speed — no loop, holds on final frame
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -188,14 +187,12 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
   }, [videoSrc]);
 
   return (
-    <section ref={sectionRef} className="pt-24 pb-16 px-6">
-      <motion.div
-        className="relative overflow-hidden bg-[#e8e4df]"
-        style={{ borderRadius: "12px", aspectRatio: "16/9", opacity: imgOpacity }}
-      >
+    <section ref={sectionRef}>
+      {/* Full-bleed video — edge to edge, no padding, no border-radius */}
+      <div className="relative w-full overflow-hidden" style={{ height: "56vh" }}>
         <motion.div
           className="absolute inset-0"
-          style={{ scale: imgScale, y: imgY, willChange: "transform" }}
+          style={{ scale: videoScale, y: videoY, willChange: "transform" }}
         >
           {videoSrc ? (
             <video
@@ -203,7 +200,6 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
               src={videoSrc}
               muted
               playsInline
-              loop
               autoPlay
               preload="auto"
               aria-label="Valtor.io | AI-first business optimization"
@@ -214,16 +210,30 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
             <div className="w-full h-full bg-[#e8e4df]" />
           )}
         </motion.div>
+
+        {/* Luxury gradient: seamless bleed into background */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "linear-gradient(to bottom, transparent 60%, rgba(250,250,249,0.3) 100%)",
-            boxShadow: "inset 0 0 40px rgba(0,0,0,0.06)",
+            background: `
+              linear-gradient(to bottom, var(--background) 0%, transparent 15%, transparent 55%, var(--background) 100%),
+              linear-gradient(to right, var(--background) 0%, transparent 8%, transparent 92%, var(--background) 100%)
+            `,
           }}
         />
-      </motion.div>
 
-      <HeroContent locale={locale} className="mt-8" />
+        {/* Subtle vignette for depth */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse 80% 70% at 50% 45%, transparent 40%, rgba(0,0,0,0.06) 100%)",
+          }}
+        />
+      </div>
+
+      <HeroContent locale={locale} className="px-6 -mt-6" />
+
+      <div className="h-16" />
     </section>
   );
 }
