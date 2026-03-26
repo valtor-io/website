@@ -280,6 +280,7 @@ export function Hero() {
             loop
             playsInline
             preload="metadata"
+            aria-label="Valtor.io — AI-first business optimization visualization"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div
@@ -304,6 +305,7 @@ export function Hero() {
             muted
             playsInline
             preload="auto"
+            aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
             style={ready ? { display: "none" } : undefined}
           />
@@ -311,6 +313,8 @@ export function Hero() {
 
         <canvas
           ref={canvasRef}
+          role="img"
+          aria-label="Valtor.io — deterministic business optimization for mid-market companies"
           className="absolute inset-0 w-full h-full"
           style={{ objectFit: "cover" }}
         />

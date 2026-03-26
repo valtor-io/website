@@ -1,90 +1,103 @@
 # SEO Technical Audit — valtor.io
 
-**Date**: 2026-03-26
+**Last updated**: 2026-03-26
 **Domain**: www.valtor.io
 **Stack**: Next.js 16 (App Router) + Tailwind 4 + Framer Motion, deployed on Vercel
-**Type**: Single-page landing site, bilingual DE/EN (client-side toggle)
+**Pages**: 10 (2 homepage locales + 2 blog index + 6 blog posts)
 
 ---
 
-## Critical Issues Found & Fixed
+## Current State
 
-### 1. No robots.txt (FIXED)
-- **Impact**: Crawlers had no guidance; sitemap was undiscoverable.
-- **Fix**: Created `src/app/robots.ts` — allows all crawlers, blocks `/api/` and `/_next/`, references sitemap.
+| Check | Status | Notes |
+|-------|--------|-------|
+| robots.txt | ✅ | Allows all, blocks /api/ and /_next/, references sitemap |
+| sitemap.xml | ✅ | 10 URLs, auto-generated from blog.ts |
+| Title tags | ✅ | Unique per page, bilingual |
+| Meta descriptions | ✅ | Unique per page, under 160 chars |
+| Canonical URLs | ✅ | Every page has canonical |
+| Open Graph | ✅ | Title, description, type, locale |
+| Twitter cards | ✅ | summary_large_image |
+| hreflang | ✅ | de-DE ↔ en-US on all pages |
+| HTML lang | ✅ | Set by middleware routing |
+| Viewport meta | ✅ | Next.js default |
+| Favicon | ✅ | Branded SVG + Apple touch icon |
+| Web app manifest | ✅ | manifest.webmanifest |
+| llms.txt | ✅ | Services + blog summaries |
+| OG image | ✅ | Edge-rendered branded (1200×630) |
+| GA4 analytics | ✅ | G-ZL0PMRW091 |
+| GSC verified | ✅ | Sitemap submitted |
 
-### 2. No sitemap.xml (FIXED)
-- **Impact**: Search engines couldn't discover pages programmatically.
-- **Fix**: Created `src/app/sitemap.ts` — single URL entry with weekly change frequency.
+## Structured Data Coverage
 
-### 3. No canonical URL (FIXED)
-- **Impact**: Potential duplicate content issues (www vs non-www, with/without trailing slash).
-- **Fix**: Added `metadataBase` + `alternates.canonical` in layout metadata.
+| Schema | Page | Status |
+|--------|------|--------|
+| Organization | Homepage | ✅ |
+| Service ×3 | Homepage | ✅ |
+| WebSite | Homepage | ✅ |
+| FAQPage | Homepage | ✅ |
+| BreadcrumbList | Homepage + all blog | ✅ |
+| VideoObject | Homepage | ✅ |
+| Article | Each blog post | ✅ |
 
-### 4. No structured data (FIXED)
-- **Impact**: No rich results eligibility; poor semantic understanding by search engines.
-- **Fix**: Added JSON-LD `@graph` with Organization, 3 Service entries, and WebSite schema.
+## Content Coverage
 
-### 5. No Twitter/X card tags (FIXED)
-- **Impact**: Social shares showed no preview card.
-- **Fix**: Added `twitter.card`, `twitter.title`, `twitter.description` to metadata.
+| Page | DE | EN | Title unique | Meta unique | JSON-LD |
+|------|----|----|-------------|------------|---------|
+| Homepage | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Blog index | ✅ | ✅ | ✅ | ✅ | ✅ |
+| BWA vs P&L | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Margin leaks | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Data before AI | ✅ | ✅ | ✅ | ✅ | ✅ |
 
-### 6. No OG image (FIXED)
-- **Impact**: Social shares showed no visual preview.
-- **Fix**: Created `src/app/opengraph-image.tsx` — edge-rendered branded image (1200x630).
+## Internal Linking
 
-### 7. No llms.txt (FIXED)
-- **Impact**: AI crawlers had no structured overview of the business.
-- **Fix**: Created `public/llms.txt` with services, methodology, and contact info.
+| From | To | Method |
+|------|----|--------|
+| Nav bar | Blog index | Direct link |
+| Footer | Latest 3 blog posts | Blog cards |
+| Footer | Blog index | Text link |
+| Blog index | Each post | Post cards |
+| Blog posts | Related posts | Related grid |
+| Blog posts | Homepage | Breadcrumb |
+| Blog posts | Blog index | Breadcrumb + back link |
+| Blog posts | Alternate language | Language switch |
 
-### 8. Missing hreflang tags (FIXED)
-- **Impact**: Search engines couldn't serve correct language version to users.
-- **Fix**: Added `alternates.languages` for de-DE and en-US in metadata.
+## Rendering
 
----
+| Item | Status | Notes |
+|------|--------|-------|
+| SSR | ✅ | All components static import (no dynamic()) |
+| SSG | ✅ | All pages pre-rendered at build time |
+| JS-free crawlability | ✅ | Full HTML in initial response |
 
-## Current State (Post-Fix)
+## Remaining Issues
 
-| Check | Status |
-|-------|--------|
-| robots.txt | PASS |
-| sitemap.xml | PASS |
-| Title tag | PASS — unique, descriptive |
-| Meta description | PASS — under 160 chars |
-| Canonical URL | PASS |
-| Open Graph tags | PASS |
-| Twitter card | PASS |
-| JSON-LD structured data | PASS — Organization + 3 Services + WebSite |
-| hreflang | PASS — de-DE, en-US |
-| Viewport meta | PASS (Next.js default) |
-| HTML lang attribute | PASS — lang="de" |
-| llms.txt | PASS |
-| OG image | PASS — edge-rendered |
-
----
-
-## Remaining Issues (Non-Blocking)
+### Blocked on Human Input
+1. **Impressum page** — Legally required in DACH. Needs company registration details.
+2. **Datenschutz page** — Legally required with GA4. Needs privacy policy text.
 
 ### Medium Priority
-1. **No favicon customization** — Still using default Next.js favicon. Should replace with branded Valtor.io icon.
-2. **No web app manifest** — Missing `manifest.json` for PWA/mobile add-to-homescreen.
-3. **Client-side i18n not URL-based** — Both DE and EN content served at same URL. Search engines cannot independently index language versions. Would need `/en/` route prefix for true multilingual SEO.
-4. **Dynamic imports may hide content from crawlers** — Below-fold sections use `dynamic()`. Googlebot handles JS well, but static rendering would be safer.
-5. **No alt text on hero video** — `<video>` element should have descriptive accessible text nearby.
-6. **Boilerplate SVGs in public/** — `file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg` are unused. Clean up to avoid confusion.
+3. **Hero video alt text** — `<video>` element has no aria-label. VideoObject schema compensates partially.
+4. **Canvas element accessibility** — Hero canvas lacks aria-label for screen readers.
 
 ### Low Priority
-7. **No blog/content pages** — Single-page site limits keyword targeting surface area. Blog or resource pages would expand organic reach.
-8. **No Google Search Console verification** — Should add site verification meta tag or DNS record.
-9. **No analytics** — No way to measure SEO impact without GA4 or equivalent.
+5. **No dedicated service pages** — single landing page limits long-tail keyword capture.
+6. **No CrUX data yet** — site too new for Chrome User Experience Report.
 
 ---
 
-## Verification
+## Automation
 
-Run the audit script:
+| Tool | Schedule | What it checks |
+|------|----------|---------------|
+| Lighthouse CI | Every push/PR | Performance, Accessibility, SEO, Best Practices scores |
+| Weekly SEO Audit | Mondays 8:17 UTC | Sitemap, robots, pages, titles, meta, JSON-LD, canonicals, hreflang, CWV |
+| CWV check script | On-demand | PageSpeed Insights API for all pages |
+| Audit script | On-demand | Live site checks (curl-based) |
+
+Run locally:
 ```bash
 ./scripts/seo/audit.sh https://www.valtor.io
+./scripts/seo/cwv-check.sh
 ```
-
-Results are saved to `artifacts/seo/metrics.json` with history in `artifacts/seo/history/`.

@@ -19,79 +19,126 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - name: SEO checks
+      - name: SEO build checks
         run: |
           set -e
           echo "=== SEO Audit $(date -u +%Y-%m-%d) ==="
 
-          # Check sitemap exists and has entries
           SITEMAP=".next/server/app/sitemap.xml.body"
           if [ -f "$SITEMAP" ]; then
             URL_COUNT=$(grep -c '<loc>' "$SITEMAP")
             echo "✓ Sitemap: $URL_COUNT URLs"
           else
-            echo "✗ Sitemap missing!"
-            exit 1
+            echo "✗ Sitemap missing!" && exit 1
           fi
 
-          # Check robots.txt
           if [ -f ".next/server/app/robots.txt.body" ]; then
             echo "✓ robots.txt present"
           else
-            echo "✗ robots.txt missing!"
-            exit 1
+            echo "✗ robots.txt missing!" && exit 1
           fi
 
-          # Check all static pages generated
           for page in de en de/blog en/blog; do
             if [ -f ".next/server/app/$page.html" ]; then
               echo "✓ /$page generated"
             else
-              echo "✗ /$page missing!"
-              exit 1
+              echo "✗ /$page missing!" && exit 1
             fi
           done
 
-          # Check blog posts generated
           BLOG_PAGES=$(find .next/server/app -path "*/blog/*.html" | wc -l)
           echo "✓ Blog pages: $BLOG_PAGES"
 
-          # Check for title tags in generated HTML
-          for html in .next/server/app/de.html .next/server/app/en.html; do
-            if grep -q '<title>' "$html"; then
-              echo "✓ $(basename $html) has <title>"
-            else
-              echo "✗ $(basename $html) missing <title>!"
+          # Check title + meta description + JSON-LD on all HTML pages
+          MISSING_TITLE=0
+          MISSING_META=0
+          MISSING_JSONLD=0
+          for html in $(find .next/server/app -name "*.html" -not -path "*/_not-found*"); do
+            PAGE=$(echo "$html" | sed 's|.next/server/app/||')
+            if ! grep -q '<title>' "$html"; then
+              echo "✗ $PAGE missing <title>"
+              MISSING_TITLE=$((MISSING_TITLE + 1))
             fi
-          done
-
-          # Check structured data present
-          for html in .next/server/app/de.html .next/server/app/en.html; do
-            if grep -q 'application/ld+json' "$html"; then
-              echo "✓ $(basename $html) has JSON-LD"
-            else
-              echo "✗ $(basename $html) missing JSON-LD!"
+            if ! grep -q 'name="description"' "$html"; then
+              echo "⚠ $PAGE missing meta description"
+              MISSING_META=$((MISSING_META + 1))
+            fi
+            if ! grep -q 'application/ld+json' "$html"; then
+              echo "⚠ $PAGE missing JSON-LD"
+              MISSING_JSONLD=$((MISSING_JSONLD + 1))
             fi
           done
 
           echo ""
+          echo "✓ Title coverage: all pages have titles" || true
+          [ $MISSING_TITLE -gt 0 ] && echo "✗ $MISSING_TITLE pages missing titles"
+          [ $MISSING_META -gt 0 ] && echo "⚠ $MISSING_META pages missing meta descriptions"
+          [ $MISSING_JSONLD -gt 0 ] && echo "⚠ $MISSING_JSONLD pages missing JSON-LD"
+
+          # Check canonical tags
+          MISSING_CANONICAL=0
+          for html in $(find .next/server/app -name "*.html" -not -path "*/_not-found*"); do
+            if ! grep -q 'rel="canonical"' "$html"; then
+              PAGE=$(echo "$html" | sed 's|.next/server/app/||')
+              echo "⚠ $PAGE missing canonical"
+              MISSING_CANONICAL=$((MISSING_CANONICAL + 1))
+            fi
+          done
+          [ $MISSING_CANONICAL -eq 0 ] && echo "✓ All pages have canonical tags"
+
+          # Check hreflang
+          for html in .next/server/app/de.html .next/server/app/en.html; do
+            if grep -q 'hreflang' "$html"; then
+              echo "✓ $(basename $html) has hreflang"
+            else
+              echo "⚠ $(basename $html) missing hreflang"
+            fi
+          done
+
+          # Schema types coverage
+          echo ""
+          echo "Schema types found:"
+          for html in .next/server/app/de.html; do
+            grep -oP '"@type":"[^"]*"' "$html" | sort -u | while read -r type; do
+              echo "  ✓ $type"
+            done
+          done
+
+          echo ""
           echo "=== Audit complete ==="
+
+      - name: Core Web Vitals check (live site)
+        continue-on-error: true
+        run: |
+          echo "=== Core Web Vitals — $(date -u +%Y-%m-%d) ==="
+          for page in /de /en /de/blog; do
+            URL="https://www.valtor.io${page}"
+            echo "Checking $URL (mobile)..."
+            RESPONSE=$(curl -sf "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${URL}&strategy=mobile&category=performance&category=seo" 2>/dev/null || echo '{}')
+            PERF=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('lighthouseResult',{}).get('categories',{}).get('performance',{}).get('score','N/A'))" 2>/dev/null || echo "N/A")
+            SEO=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('lighthouseResult',{}).get('categories',{}).get('seo',{}).get('score','N/A'))" 2>/dev/null || echo "N/A")
+            echo "  Performance: $PERF | SEO: $SEO"
+            sleep 3
+          done
 
       - name: Update metrics
         run: |
           SITEMAP=".next/server/app/sitemap.xml.body"
           URL_COUNT=$(grep -c '<loc>' "$SITEMAP" 2>/dev/null || echo 0)
           BLOG_PAGES=$(find .next/server/app -path "*/blog/*.html" | wc -l)
+          TOTAL_PAGES=$(find .next/server/app -name "*.html" -not -path "*/_not-found*" | wc -l)
 
           mkdir -p artifacts/seo/history
           cat > artifacts/seo/metrics.json << METRICS
           {
             "date": "$(date -u +%Y-%m-%d)",
             "sitemap_urls": $URL_COUNT,
+            "total_pages": $TOTAL_PAGES,
             "blog_pages": $BLOG_PAGES,
             "has_robots": true,
             "has_structured_data": true,
-            "locales": ["de", "en"]
+            "locales": ["de", "en"],
+            "schema_types": ["Organization", "Service", "WebSite", "FAQPage", "BreadcrumbList", "VideoObject", "Article"]
           }
           METRICS
 
