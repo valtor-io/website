@@ -11,7 +11,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const isDE = locale === "de";
   return {
-    title: isDE ? "Blog — Valtor.io" : "Blog — Valtor.io",
+    title: isDE
+      ? "Blog — Einblicke in datengetriebene Unternehmenssteuerung | Valtor.io"
+      : "Blog — Insights on Data-Driven Business Steering | Valtor.io",
     description: isDE
       ? "Einblicke in Business Optimization, Management-P&L, operative Intelligenz und datengetriebene Unternehmenssteuerung für den Mittelstand."
       : "Insights on business optimization, management P&L, operational intelligence, and data-driven steering for mid-market companies.",
@@ -33,15 +35,45 @@ export default async function BlogIndex({
   const { locale } = await params;
   const l = locale as Locale;
 
+  // Sort posts by date descending
+  const sortedPosts = [...posts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Valtor.io",
+        item: `https://www.valtor.io/${locale}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `https://www.valtor.io/${locale}/blog`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <div className="max-w-[800px] mx-auto px-6 md:px-8 py-32">
-        <Link
-          href={`/${locale}`}
-          className="text-foreground-subtle text-[13px] hover:text-foreground transition-colors"
-        >
-          &larr; {l === "de" ? "Zurück" : "Back"}
-        </Link>
+        <nav className="flex items-center gap-2 text-[11px] font-mono tracking-wider text-foreground-subtle">
+          <Link href={`/${locale}`} className="hover:text-foreground transition-colors">
+            Valtor.io
+          </Link>
+          <span>/</span>
+          <span className="text-foreground-muted">Blog</span>
+        </nav>
 
         <h1
           className="mt-8 text-4xl md:text-5xl tracking-[-0.03em] leading-[1.1]"
@@ -56,14 +88,32 @@ export default async function BlogIndex({
             : "Insights on data-driven business steering for mid-market companies."}
         </p>
 
-        <div className="mt-16 space-y-12">
-          {posts.map((post) => (
-            <article key={post.slug} className="group">
-              <Link href={`/${locale}/blog/${post.slug}`}>
-                <time className="text-[11px] text-foreground-subtle font-mono tracking-wider uppercase">
-                  {post.publishedAt}
-                </time>
-                <h2 className="mt-2 text-xl md:text-2xl tracking-[-0.02em] leading-snug group-hover:text-accent transition-colors">
+        <div className="mt-16 space-y-1">
+          {sortedPosts.map((post) => (
+            <article
+              key={post.slug}
+              className="group border-b border-border"
+            >
+              <Link
+                href={`/${locale}/blog/${post.slug}`}
+                className="block py-8 hover:pl-2 transition-all duration-200"
+              >
+                <div className="flex items-center gap-4 text-[11px] font-mono tracking-wider uppercase text-foreground-subtle">
+                  <time>{post.publishedAt}</time>
+                  {post.readingTime && (
+                    <>
+                      <span className="w-1 h-1 rounded-full bg-foreground-subtle" />
+                      <span>{post.readingTime[l]}</span>
+                    </>
+                  )}
+                  {post.category && (
+                    <>
+                      <span className="w-1 h-1 rounded-full bg-foreground-subtle" />
+                      <span className="text-accent">{post.category[l]}</span>
+                    </>
+                  )}
+                </div>
+                <h2 className="mt-3 text-xl md:text-2xl tracking-[-0.02em] leading-snug group-hover:text-accent transition-colors">
                   {post.title[l]}
                 </h2>
                 <p className="mt-3 text-[14px] text-foreground-muted leading-relaxed max-w-[60ch]">
@@ -72,6 +122,16 @@ export default async function BlogIndex({
               </Link>
             </article>
           ))}
+        </div>
+
+        {/* Back to homepage with internal link */}
+        <div className="mt-12">
+          <Link
+            href={`/${locale}`}
+            className="text-foreground-subtle text-[13px] hover:text-foreground transition-colors"
+          >
+            &larr; {l === "de" ? "Zurück zur Startseite" : "Back to homepage"}
+          </Link>
         </div>
       </div>
     </div>
