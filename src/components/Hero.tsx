@@ -231,7 +231,7 @@ function MobileHero({ locale, videoSrc }: { locale: Locale; videoSrc?: string })
         />
       </div>
 
-      <HeroContent locale={locale} className="px-6 -mt-6" />
+      <HeroContent locale={locale} className="px-6 mt-2" />
 
       <div className="h-16" />
     </section>
