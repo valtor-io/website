@@ -33,6 +33,20 @@ Mid-market companies in DACH: agencies, service businesses, SaaS companies, and 
 6. Dynamic FP&A & Management Intelligence — build dashboards, forecasting, monthly steering
 7. Execution Layer — system design, workflow redesign, automation
 
+## Blog Articles
+
+### BWA vs Management P&L
+URL: https://www.valtor.io/de/blog/bwa-vs-management-pnl (DE) | https://www.valtor.io/en/blog/bwa-vs-management-pnl (EN)
+The BWA shows what the tax office needs. But it doesn't show which products are profitable, where cash leaks, or what to improve next. This article explains the difference between bookkeeping truth (DATEV/BWA) and management truth (structured P&L by profit center). Includes a comparison table of BWA vs Management P&L across 6 dimensions and five diagnostic questions every CEO should be able to answer.
+
+### 7 Hidden Margin Leaks
+URL: https://www.valtor.io/de/blog/versteckte-margen-lecks (DE) | https://www.valtor.io/en/blog/versteckte-margen-lecks (EN)
+Most CEOs know their overall margin but not the true cost-to-serve differences between clients. This article identifies 7 specific margin leaks common in mid-market companies: cost-to-serve blindness, working capital gaps, process friction, price erosion, capacity waste, overhead misallocation, and scope creep. Cites research showing 20% of clients often deliver 250%+ of total profit (Kaplan whale curve) and €26.5B in trapped working capital in German mid-market (Grant Thornton).
+
+### Fix Your Data Before AI
+URL: https://www.valtor.io/de/blog/daten-vor-ki (DE) | https://www.valtor.io/en/blog/daten-vor-ki (EN)
+60% of AI projects will be abandoned by 2026 due to missing data foundations (Gartner). Only 6% of organizations achieve measurable EBIT impact from AI (McKinsey). This article argues that mid-market companies should fix their data architecture before deploying AI. Covers what bad data actually looks like (silos, missing granularity, historical inconsistency), the difference between deterministic and probabilistic systems, a 5-question data maturity test, and a practical 8-week path from data chaos to management intelligence.
+
 ## Contact
 
 - Email: kontakt@valtor.io

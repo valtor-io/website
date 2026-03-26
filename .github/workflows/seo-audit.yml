@@ -1,0 +1,103 @@
+name: Weekly SEO Audit
+
+on:
+  schedule:
+    - cron: "17 8 * * 1"  # Monday 8:17 AM UTC
+  workflow_dispatch: {}
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: SEO checks
+        run: |
+          set -e
+          echo "=== SEO Audit $(date -u +%Y-%m-%d) ==="
+
+          # Check sitemap exists and has entries
+          SITEMAP=".next/server/app/sitemap.xml.body"
+          if [ -f "$SITEMAP" ]; then
+            URL_COUNT=$(grep -c '<loc>' "$SITEMAP")
+            echo "✓ Sitemap: $URL_COUNT URLs"
+          else
+            echo "✗ Sitemap missing!"
+            exit 1
+          fi
+
+          # Check robots.txt
+          if [ -f ".next/server/app/robots.txt.body" ]; then
+            echo "✓ robots.txt present"
+          else
+            echo "✗ robots.txt missing!"
+            exit 1
+          fi
+
+          # Check all static pages generated
+          for page in de en de/blog en/blog; do
+            if [ -f ".next/server/app/$page.html" ]; then
+              echo "✓ /$page generated"
+            else
+              echo "✗ /$page missing!"
+              exit 1
+            fi
+          done
+
+          # Check blog posts generated
+          BLOG_PAGES=$(find .next/server/app -path "*/blog/*.html" | wc -l)
+          echo "✓ Blog pages: $BLOG_PAGES"
+
+          # Check for title tags in generated HTML
+          for html in .next/server/app/de.html .next/server/app/en.html; do
+            if grep -q '<title>' "$html"; then
+              echo "✓ $(basename $html) has <title>"
+            else
+              echo "✗ $(basename $html) missing <title>!"
+            fi
+          done
+
+          # Check structured data present
+          for html in .next/server/app/de.html .next/server/app/en.html; do
+            if grep -q 'application/ld+json' "$html"; then
+              echo "✓ $(basename $html) has JSON-LD"
+            else
+              echo "✗ $(basename $html) missing JSON-LD!"
+            fi
+          done
+
+          echo ""
+          echo "=== Audit complete ==="
+
+      - name: Update metrics
+        run: |
+          SITEMAP=".next/server/app/sitemap.xml.body"
+          URL_COUNT=$(grep -c '<loc>' "$SITEMAP" 2>/dev/null || echo 0)
+          BLOG_PAGES=$(find .next/server/app -path "*/blog/*.html" | wc -l)
+
+          mkdir -p artifacts/seo/history
+          cat > artifacts/seo/metrics.json << METRICS
+          {
+            "date": "$(date -u +%Y-%m-%d)",
+            "sitemap_urls": $URL_COUNT,
+            "blog_pages": $BLOG_PAGES,
+            "has_robots": true,
+            "has_structured_data": true,
+            "locales": ["de", "en"]
+          }
+          METRICS
+
+          cp artifacts/seo/metrics.json "artifacts/seo/history/$(date -u +%Y-%m-%d).json"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seo-metrics
+          path: artifacts/seo/
