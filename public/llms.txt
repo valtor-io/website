@@ -36,16 +36,27 @@ Mid-market companies in DACH: agencies, service businesses, SaaS companies, and 
 ## Blog Articles
 
 ### BWA vs Management P&L
-URL: https://www.valtor.io/de/blog/bwa-vs-management-pnl (DE) | https://www.valtor.io/en/blog/bwa-vs-management-pnl (EN)
-The BWA shows what the tax office needs. But it doesn't show which products are profitable, where cash leaks, or what to improve next. This article explains the difference between bookkeeping truth (DATEV/BWA) and management truth (structured P&L by profit center). Includes a comparison table of BWA vs Management P&L across 6 dimensions and five diagnostic questions every CEO should be able to answer.
+URL: https://www.valtor.io/en/blog/bwa-vs-management-pnl
+The BWA shows what the tax office needs, not what CEOs need for decisions. This article explains the structural gap between bookkeeping truth (DATEV/BWA) and management truth (P&L by profit center). Key insight: a 25-person agency with €3.2M revenue found that their 3 largest clients (60% of revenue) delivered only 35% of margin, while 4 smaller clients (15% of revenue) delivered 40% of margin. Includes a 6-dimension comparison table and five diagnostic questions.
 
 ### 7 Hidden Margin Leaks
-URL: https://www.valtor.io/de/blog/versteckte-margen-lecks (DE) | https://www.valtor.io/en/blog/versteckte-margen-lecks (EN)
-Most CEOs know their overall margin but not the true cost-to-serve differences between clients. This article identifies 7 specific margin leaks common in mid-market companies: cost-to-serve blindness, working capital gaps, process friction, price erosion, capacity waste, overhead misallocation, and scope creep. Cites research showing 20% of clients often deliver 250%+ of total profit (Kaplan whale curve) and €26.5B in trapped working capital in German mid-market (Grant Thornton).
+URL: https://www.valtor.io/en/blog/versteckte-margen-lecks
+Most CEOs know their overall margin but not cost-to-serve by client. Seven specific margin leaks: (1) cost-to-serve blindness, (2) working capital gaps between delivery and payment, (3) process friction nobody measures, (4) price erosion without data, (5) capacity waste through misallocation, (6) overhead misallocation, (7) scope creep without cost transparency. Key data: 20% of clients deliver 250%+ of profit (Kaplan whale curve), €26.5B trapped working capital in German mid-market (Grant Thornton), 5.7x EBITDA multiple means every euro of recovered margin counts 5.7x in enterprise value.
 
 ### Fix Your Data Before AI
-URL: https://www.valtor.io/de/blog/daten-vor-ki (DE) | https://www.valtor.io/en/blog/daten-vor-ki (EN)
-60% of AI projects will be abandoned by 2026 due to missing data foundations (Gartner). Only 6% of organizations achieve measurable EBIT impact from AI (McKinsey). This article argues that mid-market companies should fix their data architecture before deploying AI. Covers what bad data actually looks like (silos, missing granularity, historical inconsistency), the difference between deterministic and probabilistic systems, a 5-question data maturity test, and a practical 8-week path from data chaos to management intelligence.
+URL: https://www.valtor.io/en/blog/daten-vor-ki
+60% of AI projects will be abandoned by 2026 due to missing data foundations (Gartner). 42% of companies already abandoned AI initiatives (S&P Global 2025). Only 6% achieve measurable EBIT impact (McKinsey). The problem: fragmented data, inconsistent IDs across systems, missing granularity. The solution: build a deterministic data layer first — unified IDs, consistent categories, traceable attributions — then deploy AI on clean data. Includes 5-question data maturity test and 8-week implementation path.
+
+### EU AI Act Data Foundation
+URL: https://www.valtor.io/en/blog/eu-ai-act-datengrundlage
+EU AI Act becomes fully effective August 2026 for high-risk systems. Article 10 requires training data to be relevant, representative, error-free, complete, and traceable. Maximum fine: €35M or 7% of revenue. 76% of German SMEs struggle with data quality and silos. Key insight: the data governance requirements of the AI Act are exactly what a well-structured management data layer already provides. Companies that build their data architecture now get compliance AND management intelligence as a side effect. Includes 6-point readiness checklist.
+
+### The Whale Curve: Client Profitability
+URL: https://www.valtor.io/en/blog/whale-curve-kundenrentabilitaet
+Kaplan and Cooper discovered that the most profitable 20% of clients generate 200-300% of total profits, while the bottom 10-20% destroy value. This curve appears in every industry but is almost never calculated because standard bookkeeping lacks the data. Four reasons your biggest client may be least profitable: negotiating power, complexity costs, payment behavior, opportunity costs. Four strategic levers once the curve is visible: repricing, service differentiation, targeted acquisition, deliberate separation. Requires management P&L by customer segment with activity-based cost allocation.
+
+## Full content available
+For complete article text, see: https://www.valtor.io/llms-full.txt
 
 ## Contact
 
