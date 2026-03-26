@@ -1,0 +1,40 @@
+# Valtor.io
+
+> AI-first business optimization agency for mid-market companies in DACH (Germany, Austria, Switzerland).
+
+## What Valtor.io Does
+
+Valtor.io creates deterministic business truth for mid-market companies (€3M–50M revenue). We focus on WHAT should actually be improved before discussing HOW to improve it. We are not a bookkeeper, not a dashboard vendor, not a BI tool.
+
+## Core Services
+
+- **Diagnostic (€5–15K)**: Business model audit, P&L reconstruction, identification of EBITDA and cash flow improvement opportunities.
+- **Build (€20–50K)**: End-to-end data unification, event logging, process intelligence, dynamic FP&A dashboards with drill-down.
+- **Steer (€3–8K/month)**: Monthly AI-native steering mechanism with evidence-based recommendations, KPI tracking, continuous improvement.
+
+## Key Differentiators
+
+- Deterministic outputs only — no AI-generated numbers, no probabilistic guesses.
+- Every number drills down to source records.
+- Permanent operational intelligence that stays with the client.
+- "DATEV gives bookkeeping truth. Valtor gives management truth."
+
+## Target Clients
+
+Mid-market companies in DACH: agencies, service businesses, SaaS companies, and founder-led operationally complex businesses with €3M–50M revenue.
+
+## Methodology
+
+1. Audit & Diagnosis — understand business model, monetization, org structure
+2. Business Structuring & P&L Reconstruction — define profit centers, management P&L logic
+3. EBITDA & Cash Improvement — rank cost reduction and cash flow opportunities by impact
+4. End-to-End Data Unification — connect all source systems into unified data model
+5. Event Logging & Process Intelligence — deploy event capture, compute cycle times, identify bottlenecks
+6. Dynamic FP&A & Management Intelligence — build dashboards, forecasting, monthly steering
+7. Execution Layer — system design, workflow redesign, automation
+
+## Contact
+
+- Email: kontakt@valtor.io
+- Website: https://www.valtor.io
+- Region: DACH (Germany, Austria, Switzerland)

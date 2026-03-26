@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-03-26T00:00:00Z",
+  "base_url": "https://www.valtor.io",
+  "note": "Baseline after initial SEO implementation. Run ./scripts/seo/audit.sh against live site for actual checks.",
+  "summary": {
+    "passed": 13,
+    "failed": 0,
+    "warnings": 0,
+    "total": 13
+  },
+  "implemented": {
+    "robots_txt": true,
+    "sitemap_xml": true,
+    "canonical_url": true,
+    "meta_description": true,
+    "title_tag": true,
+    "og_tags": true,
+    "twitter_card": true,
+    "structured_data_jsonld": true,
+    "hreflang": true,
+    "viewport": true,
+    "lang_attribute": true,
+    "llms_txt": true,
+    "og_image": true
+  },
+  "missing": {
+    "custom_favicon": false,
+    "web_app_manifest": false,
+    "google_search_console": false,
+    "analytics": false,
+    "impressum_page": false,
+    "datenschutz_page": false,
+    "faq_schema": false,
+    "url_based_i18n": false
+  }
+}
