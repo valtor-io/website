@@ -28,6 +28,13 @@ export function Footer() {
 
           <div className="flex items-center gap-8 text-[12px] text-foreground-subtle">
             <a
+              href={`/${locale}/blog`}
+              className="relative group hover:text-foreground transition-colors"
+            >
+              Blog
+              <span className="absolute bottom-0 left-0 w-full h-px bg-foreground origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+            </a>
+            <a
               href="mailto:kontakt@valtor.io"
               className="relative group hover:text-foreground transition-colors"
             >

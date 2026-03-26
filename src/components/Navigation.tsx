@@ -45,6 +45,7 @@ export function Navigation() {
     { href: "#solution", label: t(translations.nav.solution, locale) },
     { href: "#method", label: t(translations.nav.method, locale) },
     { href: "#results", label: t(translations.nav.results, locale) },
+    { href: `/${locale}/blog`, label: "Blog" },
   ];
 
   return (
