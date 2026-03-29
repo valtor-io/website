@@ -1,10 +1,11 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": ".next/server/app",
+      "startServerCommand": "npm run start",
+      "startServerReadyPattern": "ready started server",
       "url": [
-        "http://localhost/de.html",
-        "http://localhost/en.html"
+        "http://localhost:3000/de",
+        "http://localhost:3000/en"
       ]
     },
     "assert": {
