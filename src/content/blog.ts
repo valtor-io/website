@@ -857,7 +857,7 @@ export const posts: BlogPost[] = [
       de: ["Rolling Forecast Mittelstand", "Jahresplanung Probleme", "Forecasting Controlling", "Management Reporting aktuell", "FP&A Mittelstand", "Budget vs Forecast", "Unternehmenssteuerung Planung"],
       en: ["rolling forecast mid-market", "annual budget problems", "FP&A mid-market", "management reporting current", "budget vs forecast", "business steering planning", "DACH controlling"],
     },
-    relatedSlugs: ["bwa-vs-management-pnl", "prozess-intelligenz-cash-conversion-cycle", "versteckte-margen-lecks"],
+    relatedSlugs: ["bwa-vs-management-pnl", "prozess-intelligenz-cash-conversion-cycle", "gewinn-ohne-cash-insolvenzfalle-mittelstand"],
     sections: [
       {
         heading: {
@@ -1013,6 +1013,161 @@ export const posts: BlogPost[] = [
         body: {
           de: "Die Abkehr vom Jahresbudget als primärem Steuerungsinstrument ist kein radikaler Schritt. Sie ist eine logische Konsequenz aus dem, was modernes Mittelstands-Controlling eigentlich leisten sollte.\n\nDer Weg dahin folgt einer klaren Reihenfolge:\n\nErster Schritt: Daten vereinheitlichen. Bevor man an Rolling Forecasts denkt, braucht man eine einheitliche Datenschicht: CRM, Buchhaltung, Zeiterfassung, HR in einem System, automatisch aktualisiert, jede Kennzahl bis zur Quelle nachvollziehbar. Das ist die Voraussetzung. Ohne das bleibt jeder Forecast Handarbeit.\n\nZweiter Schritt: Management-P&L aufbauen. Ein Rolling Forecast braucht eine Struktur, die das Geschäftsmodell abbildet — nicht die Steuerlogik. Das bedeutet: Profitcenter, Deckungsbeiträge nach Segment, vollständige Kostenallokation. Erst wenn diese Struktur steht, kann man sinnvoll in die Zukunft planen.\n\nDritter Schritt: Rolling Forecast integrieren. Auf Basis der einheitlichen Datenschicht und der Management-P&L wird der Forecast automatisch aus den aktuellen Daten abgeleitet: Pipeline-to-Revenue-Conversion, aktuelle Kostenläufe, Cash-Cycle nach Kundensegment. Nicht als separate Planungsrunde, sondern als Ausgabe des Daten-Systems.\n\nVierter Schritt: Monatliches Steuerungs-Meeting umstrukturieren. Das Meeting fragt nicht mehr: 'Warum haben wir Plan vs. Ist verfehlt?' Es fragt: 'Auf Basis der aktuellen Daten — was ist die beste Einschätzung für die nächsten 12 Monate, und was ist das Eine, das den größten Hebel hat?'\n\nDas ist keine Utopie. Das ist umsetzbar für jeden Mittelständler mit 20 bis 200 Mitarbeitern. Die Voraussetzung ist nicht Enterprise-Software. Die Voraussetzung ist eine strukturierte Entscheidung: Wir bauen die Datengrundlage, auf der gute Planung möglich ist. Dann folgt das Instrument.\n\nUnternehmen, die das gemacht haben, berichten nicht mehr von monate langen Planungsrunden. Sie berichten von Steuerungs-Meetings, die 90 Minuten dauern und zu konkreten Entscheidungen führen. Weil die Daten aktuell sind. Weil die Struktur stimmt. Und weil die Frage 'Was tun wir als nächstes?' endlich auf Evidenz basiert, nicht auf Vermutung.",
           en: "Moving away from the annual budget as the primary steering instrument isn't a radical step. It's a logical consequence of what modern mid-market controlling should actually deliver.\n\nThe path follows a clear sequence:\n\nFirst step: unify data. Before thinking about rolling forecasts, you need a unified data layer: CRM, accounting, time tracking, HR in one system, automatically updated, every metric traceable to source. That's the prerequisite. Without it, every forecast remains manual work.\n\nSecond step: build the management P&L. A rolling forecast needs a structure that maps the business model — not tax logic. That means: profit centers, contribution margins by segment, full cost allocation. Only when this structure exists can you plan meaningfully into the future.\n\nThird step: integrate rolling forecast. Based on the unified data layer and the management P&L, the forecast is automatically derived from current data: pipeline-to-revenue conversion, current cost runs, cash cycle by client segment. Not as a separate planning round, but as output of the data system.\n\nFourth step: restructure the monthly steering meeting. The meeting no longer asks: 'Why did we miss plan vs. actual?' It asks: 'Based on current data — what's the best estimate for the next 12 months, and what's the one thing with the highest leverage?'\n\nThis isn't a utopia. It's implementable for any mid-market company with 20 to 200 employees. The prerequisite isn't enterprise software. The prerequisite is a structured decision: we build the data foundation on which good planning is possible. Then the instrument follows.\n\nCompanies that have done this no longer report months-long planning rounds. They report steering meetings that last 90 minutes and lead to concrete decisions. Because the data is current. Because the structure is right. And because the question 'what do we do next?' is finally based on evidence, not assumption.",
+        },
+      },
+    ],
+  },
+  {
+    slug: "gewinn-ohne-cash-insolvenzfalle-mittelstand",
+    publishedAt: "2026-03-27",
+    readingTime: { de: "9 Min", en: "9 min" },
+    category: { de: "Cash & Liquidität", en: "Cash & Liquidity" },
+    title: {
+      de: "Profitabel und trotzdem insolvent: Die stille Cashflow-Falle im Mittelstand",
+      en: "Profitable and Still Insolvent: The Silent Cash Flow Trap in Mid-Market Companies",
+    },
+    description: {
+      de: "17.600 Unternehmensinsolvenzen in Deutschland 2025 — viele davon mit positivem EBITDA bis kurz vor dem Ende. Warum Gewinn und Liquidität auseinanderdriften, welche drei Mechanismen dafür verantwortlich sind, und wie strukturierte Cash-Transparenz das Überleben sichert.",
+      en: "17,600 corporate insolvencies in Germany in 2025 — many with positive EBITDA until shortly before the end. Why profit and liquidity diverge, which three mechanisms are responsible, and how structured cash transparency ensures survival.",
+    },
+    keywords: {
+      de: ["Cashflow Mittelstand", "Insolvenz trotz Gewinn", "Working Capital Optimierung", "Liquiditätsplanung Mittelstand", "EBITDA vs Cashflow", "Insolvenzwelle 2026", "Cash Conversion Cycle Mittelstand"],
+      en: ["cash flow mid-market", "insolvent despite profit", "working capital optimization", "liquidity planning mid-market", "EBITDA vs cash flow", "insolvency wave Germany 2026", "cash conversion cycle"],
+    },
+    relatedSlugs: ["prozess-intelligenz-cash-conversion-cycle", "bwa-vs-management-pnl", "versteckte-margen-lecks"],
+    sections: [
+      {
+        heading: {
+          de: "Die Insolvenzfalle: Profitabel auf dem Papier, zahlungsunfähig in der Praxis",
+          en: "The Insolvency Trap: Profitable on Paper, Insolvent in Practice",
+        },
+        body: {
+          de: "Ein produzierendes Unternehmen im Schwarzwald, 45 Mitarbeiter, €8M Umsatz. EBITDA-Marge von 12%. Volle Auftragsbücher für das nächste Quartal. Der Geschäftsführer sieht ein funktionierendes Unternehmen.\n\nAn einem Dienstag im November reicht er Insolvenzantrag ein.\n\nDas ist kein Einzelfall. Die Creditreform meldet 17.600 Unternehmensinsolvenzen in Deutschland im Jahr 2025 — der höchste Wert seit 2015. Der DIHK prognostiziert für 2026 über 22.000 Fälle. Das sind mehr als 60 Insolvenzen pro Werktag.\n\nBesonders beunruhigend: Laut Creditreform war fehlendes Controlling ein wesentlicher Faktor in rund 60% der Insolvenzfälle. Nicht fehlendes Geschäft. Nicht ein schlechtes Produkt. Fehlende Transparenz darüber, wann welches Geld wohin fließt.\n\nDie Kernthese ist unbequem aber wahr: Ein positives EBITDA schützt nicht vor Insolvenz. Cash tut das. Und die meisten mittelständischen Unternehmen wissen nicht mit ausreichender Präzision, wie ihr Cash tatsächlich fließt — weil ihre Finanzsysteme auf Buchhaltungswahrheit ausgelegt sind, nicht auf Cash-Wahrheit.",
+          en: "A manufacturing company in the Black Forest, 45 employees, €8M revenue. EBITDA margin of 12%. Full order books for the next quarter. The managing director sees a functioning company.\n\nOn a Tuesday in November, they file for insolvency.\n\nThis is not an isolated case. Creditreform reports 17,600 corporate insolvencies in Germany in 2025 — the highest number since 2015. The DIHK projects over 22,000 cases for 2026. That's more than 60 insolvencies per working day.\n\nParticularly alarming: according to Creditreform, inadequate controlling was a significant factor in approximately 60% of insolvency cases. Not lack of business. Not a bad product. Lack of transparency about when which money flows where.\n\nThe core thesis is uncomfortable but true: a positive EBITDA does not protect against insolvency. Cash does. And most mid-market companies don't know with sufficient precision how their cash actually flows — because their financial systems are designed for bookkeeping truth, not cash truth.",
+        },
+        stats: [
+          {
+            number: "17.600",
+            label: { de: "Unternehmensinsolvenzen in Deutschland 2025 — höchster Wert seit 2015", en: "Corporate insolvencies in Germany in 2025 — highest since 2015" },
+            source: "Creditreform Insolvenzreport 2025",
+          },
+          {
+            number: "60%",
+            label: { de: "Der Insolvenzfälle hatten fehlendes Controlling als wesentlichen Faktor", en: "Of insolvency cases had inadequate controlling as a significant factor" },
+            source: "Creditreform",
+          },
+          {
+            number: "22.000+",
+            label: { de: "Projizierte Insolvenzen für Deutschland 2026 laut DIHK", en: "Projected insolvencies for Germany in 2026 according to DIHK" },
+            source: "DIHK Insolvenzprognose 2026",
+          },
+        ],
+      },
+      {
+        heading: {
+          de: "Warum EBITDA und Cash Flow auseinanderdriften",
+          en: "Why EBITDA and Cash Flow Diverge",
+        },
+        body: {
+          de: "Der EBITDA misst Ertragskraft. Er sagt: 'Das Unternehmen erwirtschaftet im Betrieb einen Überschuss.' Er sagt nichts darüber, wann dieser Überschuss als Cash auf dem Konto ankommt.\n\nDie Abweichung zwischen EBITDA und operativem Cashflow entsteht durch drei Hauptmechanismen:\n\n**Debitorenlaufzeiten (DSO — Days Sales Outstanding):** Umsatz wird gebucht, wenn die Leistung erbracht ist. Cash kommt erst, wenn der Kunde zahlt. Bei einem Unternehmen mit €8M Umsatz und einem DSO von 45 Tagen (im deutschen B2B-Mittelstand keine Seltenheit) liegen zu jedem Zeitpunkt rund €990.000 in offenen Forderungen. Verlängert sich der DSO um 15 Tage — zum Beispiel weil ein Großkunde seine Zahlungspolitik ändert — sind das rund €330.000 zusätzlich gebundenes Kapital, über Nacht.\n\n**Vorräte und Work-in-Progress:** In produzierenden Unternehmen und projektbasierten Dienstleistern entsteht Wert, bevor er abrechenbar ist. Die Kosten (Material, Lohn, Gemeinkosten) werden bezahlt, der Umsatz noch nicht gebucht. Je länger die Produktionszyklen oder Projektlaufzeiten, desto größer die Schere.\n\n**Vorauszahlungen an Lieferanten vs. Zahlungseingang von Kunden:** Wenn Zahlungsziele gegenüber Lieferanten kürzer sind als gegenüber Kunden — ein klassisches Ungleichgewicht im deutschen Mittelstand — entsteht ein strukturelles Cashflow-Loch, unabhängig von der Profitabilität.\n\nDas Ergebnis: Ein Unternehmen kann monatelang profitabel wachsen und dabei seinen Kassenbestand systematisch aufzehren. Wenn dann eine größere Zahlung ausbleibt oder ein Investitionsbedarf entsteht, ist der Puffer weg.",
+          en: "EBITDA measures earning power. It says: 'The company generates an operating surplus.' It says nothing about when that surplus arrives as cash in the account.\n\nThe divergence between EBITDA and operating cash flow arises through three main mechanisms:\n\n**Debtor cycle times (DSO — Days Sales Outstanding):** Revenue is booked when the service is delivered. Cash only arrives when the customer pays. For a company with €8M revenue and a DSO of 45 days (not unusual in German B2B mid-market), approximately €990,000 sits in open receivables at any given time. If DSO extends by 15 days — for example because a major client changes their payment policy — that's roughly €330,000 in additional tied-up capital, overnight.\n\n**Inventory and Work-in-Progress:** In manufacturing companies and project-based service providers, value is created before it can be invoiced. Costs (materials, labor, overhead) are paid, but revenue hasn't been booked yet. The longer the production cycles or project durations, the wider the gap.\n\n**Advance payments to suppliers vs. incoming payments from clients:** When payment terms to suppliers are shorter than from clients — a classic imbalance in the German mid-market — a structural cash flow gap emerges, regardless of profitability.\n\nThe result: a company can grow profitably for months while systematically depleting its cash balance. When a larger payment then fails to arrive or an investment need arises, the buffer is gone.",
+        },
+        callout: {
+          type: "warning",
+          text: {
+            de: "Ein Unternehmen kann profitabel wachsen und dabei seinen Kassenbestand systematisch aufzehren. Das EBITDA zeigt das nicht. Eine strukturierte Cashflow-Transparenz tut es.",
+            en: "A company can grow profitably while systematically depleting its cash balance. EBITDA doesn't show this. Structured cash flow transparency does.",
+          },
+        },
+      },
+      {
+        heading: {
+          de: "Die drei häufigsten Cash-Killer im deutschen Mittelstand",
+          en: "The Three Most Common Cash Killers in German Mid-Market Companies",
+        },
+        body: {
+          de: "In der Praxis zeigen sich in mittelständischen Dienstleistungsunternehmen und Agenturen immer wieder drei Muster, die Cash systematisch vernichten:\n\n**1. Der Großkunden-DSO-Effekt:** Ein oder zwei Großkunden machen 40–60% des Umsatzes. Diese Kunden haben Einkaufsabteilungen, die Zahlungsziele auf 60 oder 90 Tage setzen. Das akzeptiert man, weil man den Umsatz nicht verlieren will. Ergebnis: Die Finanzierungslast für die erbrachten Leistungen trägt der Dienstleister. Bei einem Jahresumsatz von €5M mit einem Großkunden und einem DSO von 75 Tagen (statt 30) bedeutet das rund €616.000 dauerhaft vorfinanziertes Working Capital — oft ohne entsprechende Kreditlinien.\n\n**2. Abrechnungszyklen nach Projektabschluss:** In vielen projektbasierten Unternehmen wird erst nach vollständiger Projektabnahme abgerechnet. Die Kosten für Personal und Ressourcen laufen während des gesamten Projekts. Bei einem 6-Monate-Projekt bedeutet das: 6 Monate Cash-Ausfluss, bevor der erste Euro eingeht. Grant Thornton schätzte in einer Studie über den deutschen Mittelstand, dass allein durch Working-Capital-Optimierung bundesweit €26,5 Mrd. Liquidität freigesetzt werden könnten.\n\n**3. Saisonale Umsatzspitzen mit gleichmäßigem Kostenblock:** Unternehmen mit saisonalem Geschäft (Weihnachtsgeschäft, Sommerreisen, Messesaisons) haben oft einen relativ stabilen monatlichen Kostenblock (Miete, Gehälter, Versicherungen), aber einen stark konzentrierten Umsatz. Wer das nicht mit Vorauszahlungen oder Kreditlinien abfedert und kein präzises Liquiditätsbild hat, gerät in der umsatzschwachen Phase in die Klemme.",
+          en: "In practice, three patterns consistently appear in mid-market service companies and agencies that systematically destroy cash:\n\n**1. The Large Client DSO Effect:** One or two major clients account for 40–60% of revenue. These clients have procurement departments that set payment terms at 60 or 90 days. You accept this because you don't want to lose the revenue. Result: the service provider bears the financing burden for delivered work. With annual revenue of €5M from one major client and a DSO of 75 days (instead of 30), that's approximately €616,000 in permanently pre-financed working capital — often without corresponding credit lines.\n\n**2. Billing Cycles After Project Completion:** In many project-based businesses, invoicing only happens after full project sign-off. Personnel and resource costs run throughout the entire project. On a 6-month project, that means: 6 months of cash outflow before the first euro comes in. Grant Thornton estimated in a study on the German mid-market that working capital optimization alone could release €26.5 billion in liquidity nationwide.\n\n**3. Seasonal Revenue Peaks With Steady Cost Base:** Companies with seasonal business (Christmas season, summer travel, trade fair seasons) often have a relatively stable monthly cost base (rent, salaries, insurance), but highly concentrated revenue. Those who don't buffer this with advance payments or credit lines, and who lack a precise liquidity picture, run into trouble during low-revenue periods.",
+        },
+        stats: [
+          {
+            number: "€26,5 Mrd.",
+            label: { de: "Freisetzbare Liquidität im deutschen Mittelstand allein durch Working-Capital-Optimierung", en: "Releasable liquidity in German mid-market through working capital optimization alone" },
+            source: "Grant Thornton Working Capital Studie Deutschland 2023",
+          },
+          {
+            number: "⅓",
+            label: { de: "Aller Insolvenzen wären durch frühzeitiges Working-Capital-Management vermeidbar gewesen", en: "Of all insolvencies could have been prevented through early working capital management" },
+            source: "KfW Research",
+          },
+        ],
+      },
+      {
+        heading: {
+          de: "Was fehlende Cash-Transparenz konkret kostet",
+          en: "What Missing Cash Transparency Concretely Costs",
+        },
+        body: {
+          de: "Die direkte Kosten fehlender Cashflow-Transparenz sind leichter zu quantifizieren als man denkt:\n\n**Ungeplante Kontokorrent-Inanspruchnahme:** Wer nicht weiß, wann ein Liquiditätstief kommt, greift reaktiv auf den Kontokorrentkredit zurück. Kontokorrentzinsen im deutschen Mittelstand liegen derzeit bei 8–12% effektiv — deutlich über dem, was eine strukturierte Finanzierungsplanung kostet. Wer für €500.000 Kontokorrent drei Monate unnötig Zinsen zahlt, verliert rund €10.000–15.000, die eine vorausschauende Planung verhindert hätte.\n\n**Skonto-Verluste:** Viele Lieferantenrechnungen bieten 2–3% Skonto bei Zahlung innerhalb von 14 Tagen. Wer wegen Liquiditätsunsicherheit nicht zahlt, verzichtet auf einen Jahreseffektivzins von teils über 30%. Bei einem Einkaufsvolumen von €1M/Jahr entspricht das €20.000–30.000 verschenktem Cash pro Jahr.\n\n**Opportunitätskosten durch Vorsichtspuffer:** Unternehmen ohne präzise Cashflow-Prognose halten systematisch höhere Cash-Reserven als nötig — als Puffer für das Unbekannte. Geld, das auf dem Girokonto liegt, arbeitet nicht. Bei einem unnötigen Liquiditätspuffer von €300.000 über 12 Monate sind das bei aktuellen Zinsen rund €12.000–15.000 entgangene Anlagerendite.\n\n**Insolvenzrisiko als existenzieller Faktor:** Das ist die unsichtbare Kosten-Position: das Risiko, dass ein unerwartetes Ereignis (ein zahlungsunfähiger Großkunde, ein ungeplanter Investitionsbedarf, ein Steuerquartal mit hoher Nachzahlung) das Unternehmen in eine Zahlungsunfähigkeit treibt, die mit einer aktuellen Liquiditätsprognose hätte vermieden werden können.",
+          en: "The direct costs of missing cash flow transparency are easier to quantify than you'd think:\n\n**Unplanned Overdraft Use:** Those who don't know when a liquidity trough is coming reactively reach for the overdraft facility. Overdraft interest rates in the German mid-market currently run at 8–12% effective — significantly above what structured financial planning costs. If you pay three months of unnecessary interest on €500,000 in overdraft, you lose roughly €10,000–15,000 that proactive planning would have prevented.\n\n**Lost Early Payment Discounts:** Many supplier invoices offer 2–3% discount for payment within 14 days. Those who don't pay due to liquidity uncertainty forgo an effective annual interest rate sometimes exceeding 30%. On purchasing volume of €1M/year, that's €20,000–30,000 in surrendered cash per year.\n\n**Opportunity Costs from Precautionary Buffers:** Companies without precise cash flow forecasts systematically hold higher cash reserves than necessary — as a buffer for the unknown. Money sitting in a current account doesn't work. On an unnecessary liquidity buffer of €300,000 over 12 months, that's roughly €12,000–15,000 in lost return at current interest rates.\n\n**Insolvency Risk as an Existential Factor:** This is the invisible cost item: the risk that an unexpected event (an insolvent major client, an unplanned investment need, a tax quarter with high back payments) drives the company into insolvency that could have been avoided with a current liquidity forecast.",
+        },
+        callout: {
+          type: "stat",
+          text: {
+            de: "Skonto-Verluste, Kontokorrentzinsen und unnötige Liquiditätspuffer summieren sich für einen typischen Mittelständler mit €5–10M Umsatz auf €40.000–80.000 pro Jahr. Das ist kein Buchhaltungsthema. Das ist ein Steuerungsthema.",
+            en: "Lost discounts, overdraft interest, and unnecessary liquidity buffers add up to €40,000–80,000 per year for a typical mid-market company with €5–10M revenue. This is not an accounting topic. It's a steering topic.",
+          },
+        },
+      },
+      {
+        heading: {
+          de: "Der Unterschied zwischen Buchhaltungswahrheit und Cash-Wahrheit",
+          en: "The Difference Between Bookkeeping Truth and Cash Truth",
+        },
+        body: {
+          de: "Das Grundproblem ist strukturell: Die Finanzsysteme, die der deutsche Mittelstand einsetzt — DATEV, BWA, Steuerberater-Reports — wurden für Buchhaltungswahrheit gebaut. Sie folgen der Logik der Periodenabgrenzung: Umsatz wird gebucht, wenn er verdient ist. Kosten, wenn sie entstehen. Das Finanzamt will das so. Die Bank will das so.\n\nCash-Wahrheit ist etwas anderes. Sie fragt: Wann kommt das Geld tatsächlich? Wann geht es tatsächlich raus? Welche Verbindlichkeiten werden in welcher Woche fällig? Welche Forderungen werden in welcher Woche eingehen — basierend auf dem tatsächlichen Zahlungsverhalten der Kunden, nicht auf den Zahlungszielen?\n\nDiese Fragen kann eine BWA nicht beantworten. Sie kann es strukturell nicht, weil sie dafür nicht gebaut wurde.\n\nWas gebraucht wird, ist eine Cash-Wahrheits-Schicht: ein System, das die offenen Forderungen aus dem CRM oder der Warenwirtschaft zieht, das historische Zahlungsverhalten pro Kundensegment kennt, die geplanten Zahlungsausgänge aus dem ERP holt, und daraus eine rollierende 13-Wochen-Cashflow-Prognose baut — automatisch, aktuell, nachvollziehbar.\n\nKein AI-Raten. Keine Schätzung auf Basis von Bauchgefühl. Jede Zahl ableitbar aus realen Forderungen, realen Verbindlichkeiten, realen historischen Zahlungsmustern.\n\nDas ist der Kern dessen, was Valtor.io als Cash-Transparenzschicht aufbaut: eine deterministische Liquiditätsprognose, die aus den Quelldaten abgeleitet wird und sich wöchentlich aktualisiert. Nicht als Dashboard-Feature, sondern als operative Überlebensinfrastruktur.",
+          en: "The fundamental problem is structural: the financial systems that German mid-market companies use — DATEV, BWA, tax advisor reports — were built for bookkeeping truth. They follow the logic of accrual accounting: revenue is booked when earned. Costs when incurred. The tax office wants it that way. The bank wants it that way.\n\nCash truth is something different. It asks: when does the money actually arrive? When does it actually leave? Which liabilities become due in which week? Which receivables will come in which week — based on actual customer payment behavior, not stated payment terms?\n\nThese questions cannot be answered by a BWA. It structurally cannot, because it wasn't built for this.\n\nWhat's needed is a cash truth layer: a system that pulls open receivables from the CRM or ERP, knows historical payment behavior by customer segment, fetches planned payment outflows from the ERP, and builds a rolling 13-week cash flow forecast from this — automatically, current, traceable.\n\nNo AI guessing. No estimation based on gut feeling. Every number derivable from real receivables, real payables, real historical payment patterns.\n\nThis is the core of what Valtor.io builds as the cash transparency layer: a deterministic liquidity forecast derived from source data that updates weekly. Not as a dashboard feature, but as operational survival infrastructure.",
+        },
+        comparison: {
+          oldLabel: { de: "BWA / Buchhaltung", en: "BWA / Bookkeeping" },
+          newLabel: { de: "Cash-Wahrheits-Schicht", en: "Cash Truth Layer" },
+          rows: [
+            {
+              dimension: { de: "Grundlogik", en: "Core logic" },
+              old: { de: "Periodenabgrenzung (Accrual)", en: "Accrual accounting" },
+              new: { de: "Tatsächliche Zahlungsflüsse", en: "Actual payment flows" },
+            },
+            {
+              dimension: { de: "Forderungen", en: "Receivables" },
+              old: { de: "Gebucht bei Rechnungsstellung", en: "Booked at invoice date" },
+              new: { de: "Prognose nach Zahlungsverhalten", en: "Forecast by payment behavior" },
+            },
+            {
+              dimension: { de: "Liquiditätshorizont", en: "Liquidity horizon" },
+              old: { de: "Vergangenheit (Ist-Zustand)", en: "Past (actual state)" },
+              new: { de: "13-Wochen-Prognose (rollierend)", en: "13-week forecast (rolling)" },
+            },
+            {
+              dimension: { de: "Aktualisierung", en: "Update frequency" },
+              old: { de: "Monatlich (Buchungsschluss)", en: "Monthly (period close)" },
+              new: { de: "Wöchentlich (automatisch)", en: "Weekly (automated)" },
+            },
+            {
+              dimension: { de: "Entscheidungsrelevanz", en: "Decision relevance" },
+              old: { de: "Steuererklärung, Bankberichte", en: "Tax filing, bank reports" },
+              new: { de: "Operative Liquiditätssteuerung", en: "Operational liquidity management" },
+            },
+          ],
+        },
+      },
+      {
+        heading: {
+          de: "Wie strukturierte Cash-Transparenz in der Praxis aussieht",
+          en: "What Structured Cash Transparency Looks Like in Practice",
+        },
+        body: {
+          de: "Ein mittelständischer B2B-Dienstleister mit €12M Umsatz implementiert eine Cash-Transparenzschicht in drei Schritten:\n\n**Schritt 1 — Datenquellen verbinden:** Offene Forderungen aus DATEV, Lieferantenverbindlichkeiten und Fälligkeiten aus dem ERP, Gehaltsabläufe aus HR, geplante Investitionen aus dem Investitionsplan. Alles automatisch in eine einheitliche Datenschicht. Keine manuelle Excel-Aggregation.\n\n**Schritt 2 — Zahlungsverhalten historisch kalibrieren:** Das System lernt, wie lang jedes Kundensegment tatsächlich braucht, um zu zahlen. Nicht das vereinbarte Zahlungsziel, sondern das tatsächliche Verhalten über die letzten 12–24 Monate. Aus diesen historischen Mustern wird jede offene Forderung mit einer Wahrscheinlichkeitsgewichtung für den Zahlungseingang pro Woche versehen — deterministisch berechnet, nicht geschätzt.\n\n**Schritt 3 — Rollierende 13-Wochen-Prognose bauen:** Auf dieser Grundlage entsteht automatisch eine wöchentlich aktualisierte Cashflow-Prognose. Sie zeigt: In welcher Woche gibt es einen negativen Free Cash Flow? Wie groß ist der erwartete Kassenbestand pro Woche? Wann müssen Kreditlinien gezogen werden?\n\nDas Ergebnis ist keine Überraschung mehr. Liquiditätsengpässe werden 6–10 Wochen im Voraus sichtbar — genug Zeit, um zu handeln: Debitorenmanagement intensivieren, Zahlungsausgänge verschieben, Kreditlinie rechtzeitig aktivieren.\n\nDie Insolvenzstatistik macht deutlich: Viele Unternehmen scheitern nicht, weil sie kein Geschäft haben. Sie scheitern, weil sie zu spät sehen, was mit ihrem Cash passiert. Das ist kein Schicksalsschlag. Es ist ein Informationsproblem — und Informationsprobleme sind lösbar.\n\nDie Voraussetzung: keine neue Software, keine neue Buchhaltungssoftware, kein ERP-Wechsel. Nur eine strukturierte Entscheidung, die bestehenden Daten so zu verknüpfen, dass Cash-Wahrheit sichtbar wird. Dann folgt das Instrument.",
+          en: "A mid-market B2B service provider with €12M revenue implements a cash transparency layer in three steps:\n\n**Step 1 — Connect Data Sources:** Open receivables from DATEV, supplier payables and due dates from the ERP, payroll schedules from HR, planned investments from the capital plan. Everything automatically into a unified data layer. No manual Excel aggregation.\n\n**Step 2 — Calibrate Payment Behavior Historically:** The system learns how long each customer segment actually takes to pay. Not the agreed payment terms, but actual behavior over the last 12–24 months. From these historical patterns, every open receivable gets a probability weighting for payment receipt per week — deterministically calculated, not estimated.\n\n**Step 3 — Build Rolling 13-Week Forecast:** On this basis, a weekly-updated cash flow forecast is automatically generated. It shows: in which week is there a negative free cash flow? What is the expected cash balance per week? When do credit lines need to be drawn?\n\nThe result is no longer a surprise. Liquidity bottlenecks become visible 6–10 weeks in advance — enough time to act: intensify debtor management, reschedule payment outflows, activate credit lines in time.\n\nThe insolvency statistics make it clear: many companies don't fail because they lack business. They fail because they see too late what's happening to their cash. This is not fate. It's an information problem — and information problems are solvable.\n\nThe prerequisite: no new software, no new accounting system, no ERP migration. Just a structured decision to connect existing data in a way that makes cash truth visible. Then the instrument follows.",
         },
       },
     ],
