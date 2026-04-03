@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "./ScrollReveal";
 import { useLocale } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -9,8 +8,6 @@ import { translations, t } from "@/i18n/translations";
 export function Engagement() {
   const { locale } = useLocale();
   const e = translations.engagement;
-  const [revealedPrices, setRevealedPrices] = useState<Set<number>>(new Set());
-
   return (
     <section className="py-24 md:py-32 bg-surface">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
@@ -66,30 +63,9 @@ export function Engagement() {
                   </div>
 
                   <div className="mt-3 flex items-center gap-3">
-                    <AnimatePresence mode="wait">
-                      {revealedPrices.has(i) ? (
-                        <motion.span
-                          key="price"
-                          className="text-accent text-[11px] font-mono tracking-wide"
-                          initial={{ opacity: 0, y: 4 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.25 }}
-                        >
-                          {typeof step.price === "string" ? step.price : t(step.price, locale)}
-                        </motion.span>
-                      ) : (
-                        <motion.button
-                          key="reveal"
-                          className="text-foreground-subtle text-[11px] font-mono tracking-wide hover:text-accent transition-colors cursor-pointer"
-                          onClick={() => setRevealedPrices((prev) => new Set(prev).add(i))}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                        >
-                          {locale === "de" ? "Preis anzeigen" : "Show pricing"}
-                        </motion.button>
-                      )}
-                    </AnimatePresence>
+                    <span className="text-accent text-[11px] font-mono tracking-wide">
+                      {typeof step.price === "string" ? step.price : t(step.price, locale)}
+                    </span>
                     <span className="text-foreground-subtle text-[11px]">/</span>
                     <span className="text-foreground-subtle text-[11px] font-mono tracking-wide">
                       {t(step.duration, locale)}

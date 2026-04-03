@@ -88,13 +88,15 @@ export default async function BlogIndex({
           className="mt-8 text-4xl md:text-5xl tracking-[-0.03em] leading-[1.1]"
           style={{ fontFamily: "var(--serif)" }}
         >
-          Blog
+          {l === "de"
+            ? "Managementwahrheit"
+            : "Management Truth"}
         </h1>
 
-        <p className="mt-4 text-foreground-muted text-[15px] max-w-[50ch]">
+        <p className="mt-4 text-foreground-muted text-[15px] max-w-[56ch]">
           {l === "de"
-            ? "Einblicke in datengetriebene Unternehmenssteuerung für den Mittelstand."
-            : "Insights on data-driven business steering for mid-market companies."}
+            ? "Operative Einblicke für Geschäftsführer, CFOs und COOs im Mittelstand. Warum Ihre BWA nicht reicht. Wo Cash steckenbleibt. Was Steuerung von Reporting unterscheidet."
+            : "Operational insights for CEOs, CFOs, and COOs in mid-market companies. Why your BWA isn\u2019t enough. Where cash gets stuck. What separates steering from reporting."}
         </p>
 
         <div className="mt-16 space-y-1">

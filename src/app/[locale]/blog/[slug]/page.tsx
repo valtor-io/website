@@ -372,13 +372,13 @@ export default async function BlogPost({
               style={{ fontFamily: "var(--serif)" }}
             >
               {l === "de"
-                ? "Wollen Sie Ihre Managementwahrheit sehen?"
-                : "Want to see your management truth?"}
+                ? "Hat Ihr Unternehmen eine Management-Wahrheitslücke?"
+                : "Does your business have a management truth gap?"}
             </p>
             <p className="mt-3 text-[14px] text-foreground-muted">
               {l === "de"
-                ? "In 30 Minuten zeigen wir Ihnen, welche versteckten EBITDA- und Cashflow-Chancen in Ihrem Unternehmen liegen."
-                : "In 30 minutes, we'll show you what hidden EBITDA and cash flow opportunities exist in your business."}
+                ? "In 30 Minuten prüfen wir gemeinsam, ob zwischen Ihrer BWA und Ihren Steuerungsentscheidungen eine Lücke existiert — und was der erste Schritt wäre, sie zu schließen."
+                : "In 30 minutes, we\u2019ll assess whether a gap exists between your financial reporting and your steering decisions — and what the first step would be to close it."}
             </p>
             <a
               href="mailto:kontakt@valtor.io"
@@ -387,6 +387,9 @@ export default async function BlogPost({
             >
               {l === "de" ? "Diagnose-Gespräch buchen" : "Book a diagnostic call"}
             </a>
+            <p className="mt-3 text-[11px] text-foreground-subtle font-mono">
+              {l === "de" ? "Kein Verkaufsgespräch. Kein Pitch-Deck. Nur Substanz." : "No sales pitch. No slide deck. Just substance."}
+            </p>
           </div>
 
           <div className="mt-8 flex items-center justify-between">

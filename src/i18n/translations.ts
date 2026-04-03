@@ -6,18 +6,18 @@ export const translations = {
     solution: { de: "Ansatz", en: "Approach" },
     method: { de: "Methodik", en: "Method" },
     results: { de: "Ergebnisse", en: "Outcomes" },
-    contact: { de: "Kontakt", en: "Contact" },
+    contact: { de: "Diagnose-Gespräch", en: "Book diagnostic" },
   },
   hero: {
     cta_primary: { de: "Diagnose-Gespräch buchen", en: "Book a diagnostic call" },
     cta_secondary: { de: "So funktioniert es", en: "How it works" },
     headline: {
-      de: "Die meisten Unternehmen optimieren blind.\nValtor.io zeigt zuerst, was tatsächlich kaputt ist.",
-      en: "Most businesses optimize blind.\nValtor.io shows what\u2019s actually broken first.",
+      de: "DATEV gibt Ihnen Buchhaltungswahrheit.\nValtor gibt Ihnen Managementwahrheit.",
+      en: "Your accounting is compliant.\nYour management team is steering blind.",
     },
     subheadline: {
-      de: "Wir sind eine AI-first Business Optimization Agency. Bevor wir etwas bauen, schaffen wir deterministische Wahrheit: strukturierte P&L, vereinheitlichte Daten, Prozess-Intelligence. Damit Sie wissen, was sich lohnt zu verbessern, bevor Sie investieren.",
-      en: "We\u2019re an AI-first business optimization agency. Before building anything, we create deterministic truth: structured P&Ls, unified data, process intelligence. So you know what\u2019s worth fixing before you invest.",
+      de: "Wir bauen operative Intelligenz für den Mittelstand: strukturierte Management-P&L, vereinheitlichte Daten, Prozesstransparenz und monatliche Steuerung. Damit Sie wissen, was tatsächlich kaputt ist — bevor Sie investieren.",
+      en: "We build operational intelligence for mid-market companies: structured management P&L, unified data, process transparency, and monthly steering. So you know what\u2019s actually broken — before you invest.",
     },
     kpi_revenue: { de: "EBITDA-Verbesserung", en: "EBITDA Improvement" },
     kpi_margin: { de: "Marge aufgedeckt", en: "Margin Recovered" },
@@ -148,8 +148,8 @@ export const translations = {
     h2_line2: { de: "Wahrheit vor", en: "Truth before" },
     h2_line3: { de: "Automatisierung.", en: "automation." },
     body: {
-      de: "Valtor.io baut zuerst die deterministische Wahrheitsschicht Ihres Unternehmens. Wir vereinheitlichen Ihre Finanzen, Daten und Prozesse in einem System, in dem jede Zahl bis zur Quellbuchung nachvollziehbar ist. Erst wenn Sie sehen können, was tatsächlich kaputt ist, empfehlen wir, was gebaut werden sollte.",
-      en: "Valtor.io builds your company\u2019s deterministic truth layer first. We unify your finances, data, and processes into one system where every number traces to its source transaction. Only when you can see what\u2019s actually broken do we recommend what should be built.",
+      de: "Valtor baut die Management-Schicht, die zwischen Ihrer Buchhaltung und Ihrer Unternehmenssteuerung fehlt. Wir vereinheitlichen Finanzen, Daten und Prozesse in einem System, in dem jede Zahl bis zur Quellbuchung nachvollziehbar ist. Erst wenn Sie sehen, was kaputt ist, empfehlen wir, was gebaut werden sollte.",
+      en: "Valtor builds the management layer that\u2019s missing between your accounting and your business steering. We unify finances, data, and processes into one system where every number traces to its source transaction. Only when you can see what\u2019s broken do we recommend what should be built.",
     },
     capabilities: [
       {
@@ -228,7 +228,7 @@ export const translations = {
     phases: [
       {
         phase: "01",
-        name: { de: "Diagnose & Strukturierung", en: "Diagnose & Structure" },
+        name: { de: "Management Truth Audit", en: "Management Truth Audit" },
         duration: { de: "4–6 Wochen", en: "4\u20136 weeks" },
         description: {
           de: "Tiefes Verständnis Ihres Geschäftsmodells, Wertschöpfungskette und Gewinnstruktur. Wir rekonstruieren Ihre Management-P&L, auditieren alle Systeme und identifizieren, wo EBITDA und Cash verloren gehen.",
@@ -241,7 +241,7 @@ export const translations = {
       },
       {
         phase: "02",
-        name: { de: "EBITDA, Daten & Prozesse", en: "EBITDA, Data & Processes" },
+        name: { de: "System Build", en: "System Build" },
         duration: { de: "8–12 Wochen", en: "8\u201312 weeks" },
         description: {
           de: "Strukturelle EBITDA- und Cashflow-Verbesserung. Vereinheitlichung aller Quellsysteme. Event-basiertes Process Mining. Aufbau der Dashboards mit vollständigem Drill-Down bis zur Quellbuchung.",
@@ -254,7 +254,7 @@ export const translations = {
       },
       {
         phase: "03",
-        name: { de: "Intelligence & Steering", en: "Intelligence & Steering" },
+        name: { de: "Monthly Steering", en: "Monthly Steering" },
         duration: { de: "Monatlich, fortlaufend", en: "Monthly, ongoing" },
         description: {
           de: "Dynamisches Forecasting, AI-gestützte Varianzanalyse, monatliche Steering-Reports mit priorisierten Verbesserungen. Das monatliche Steering-Meeting wird zum Kern Ihrer Unternehmenssteuerung.",
@@ -315,10 +315,21 @@ export const translations = {
     typical_label: { de: "Typisch", en: "Typical" },
     valtor_label: { de: "Valtor", en: "Valtor" },
     unique_angle: {
-      de: "Ihr Prozess- und Technikteam versteht keine GuV. Ihr Finance versteht keine Prozesse. Wir sind Buchhalter im Herzen und Operateure in der Praxis. Das ist der Unterschied.",
-      en: "Your process and tech people don't understand P&L. Your finance team doesn't understand processes. We are accountants at heart and operators in practice. That's the difference.",
+      de: "Ihr Steuerberater liefert Compliance. Ihre Dashboards liefern Vergangenheit. Wir liefern Steuerung: was verbessern, warum, in welcher Reihenfolge. Jede Zahl bis zur Buchung nachvollziehbar.",
+      en: "Your tax advisor delivers compliance. Your dashboards deliver history. We deliver steering: what to improve, why, in what order. Every number traceable to the transaction.",
     },
     items: [
+      {
+        category: { de: "DATEV & Steuerberater", en: "DATEV & Tax Advisors" },
+        limitation: {
+          de: "Liefern korrekte Buchhaltung und Compliance. Aber keine Management-P&L nach Profit Center, keine Prozesstransparenz, kein Steering. Die BWA zeigt Vergangenheit, nicht Steuerung.",
+          en: "Deliver correct bookkeeping and compliance. But no management P&L by profit center, no process transparency, no steering. The BWA shows the past, not direction.",
+        },
+        valtor: {
+          de: "Baut auf DATEV auf, nicht dagegen. Schafft die Management-Schicht, die Ihr Steuerberater nicht liefern kann: Deckungsbeiträge nach Segment, Prozesskennzahlen, monatliche Steuerungsempfehlungen.",
+          en: "Builds on top of DATEV, not against it. Creates the management layer your tax advisor can\u2019t deliver: contribution margins by segment, process metrics, monthly steering recommendations.",
+        },
+      },
       {
         category: { de: "AI-Agenturen", en: "AI Agencies" },
         limitation: {
@@ -397,34 +408,34 @@ export const translations = {
   },
   engagement: {
     label: { de: "Zusammenarbeit", en: "Engagement" },
-    h2_line1: { de: "Ein klarer Weg.", en: "A clear path." },
-    h2_line2: { de: "Kein Großprojekt-Risiko.", en: "No big-project risk." },
+    h2_line1: { de: "Transparente Preise.", en: "Transparent pricing." },
+    h2_line2: { de: "Jede Phase eigenständig wertvoll.", en: "Each phase delivers standalone value." },
     steps: [
       {
-        name: { de: "Diagnose", en: "Diagnostic" },
+        name: { de: "Management Truth Audit", en: "Management Truth Audit" },
         price: "€5–15K",
         duration: { de: "4–6 Wochen", en: "4\u20136 weeks" },
         description: {
-          de: "Geschäftsmodell-Audit, P&L-Rekonstruktion, System-Audit, EBITDA-Roadmap. Sie erhalten sofort Klarheit, selbst wenn Sie nicht weitergehen.",
-          en: "Business model audit, P&L reconstruction, system audit, EBITDA roadmap. You get immediate clarity, even if you don\u2019t proceed.",
+          de: "Geschäftsmodell-Audit, P&L-Rekonstruktion, System-Audit, EBITDA-Roadmap. Sie erhalten sofort Klarheit — selbst wenn Sie nicht weitergehen. Die Diagnose finanziert sich durch die identifizierten Verbesserungen.",
+          en: "Business model audit, P&L reconstruction, system audit, EBITDA roadmap. You get immediate clarity — even if you don\u2019t proceed. The diagnostic pays for itself through the improvements it identifies.",
         },
       },
       {
-        name: { de: "Build", en: "Build" },
+        name: { de: "System Build", en: "System Build" },
         price: "€20–50K",
         duration: { de: "8–12 Wochen", en: "8\u201312 weeks" },
         description: {
-          de: "EBITDA-Verbesserung, Datenschicht, Process Intelligence, Dashboards. Modularer Scope, basierend auf Diagnose-Ergebnissen.",
-          en: "EBITDA improvement, data layer, process intelligence, dashboards. Modular scope based on diagnostic findings.",
+          de: "EBITDA-Verbesserung, vereinheitlichte Datenschicht, Prozesstransparenz, Management-Dashboards mit Drill-Down. Modularer Scope, basierend auf Audit-Ergebnissen. Das System gehört Ihnen.",
+          en: "EBITDA improvement, unified data layer, process transparency, management dashboards with drill-down. Modular scope based on audit findings. You own the system.",
         },
       },
       {
-        name: { de: "Steer", en: "Steer" },
+        name: { de: "Monthly Steering", en: "Monthly Steering" },
         price: { de: "€3–8K/Monat", en: "€3\u20138K/month" },
         duration: { de: "Fortlaufend", en: "Ongoing" },
         description: {
-          de: "Monatliche Datenaktualisierung, Steering-Reports, Forecasting, priorisierte Verbesserungen. Das Betriebssystem Ihres monatlichen Leadership-Meetings.",
-          en: "Monthly data refresh, steering reports, forecasting, prioritized improvements. The operating system for your monthly leadership meeting.",
+          de: "Monatliche Datenaktualisierung, Steering-Reports, Forecasting, priorisierte Verbesserungen. Ihr Leadership-Meeting wird evidenzbasiert. Kein Berater-Abo — jederzeit kündbar.",
+          en: "Monthly data refresh, steering reports, forecasting, prioritized improvements. Your leadership meeting becomes evidence-based. Not a consultant subscription — cancel anytime.",
         },
       },
     ],
@@ -465,8 +476,8 @@ export const translations = {
     h2_line1: { de: "Lassen Sie uns Ihr", en: "Let\u2019s diagnose" },
     h2_line2: { de: "Unternehmen diagnostizieren.", en: "your business." },
     body: {
-      de: "In 30 Minuten zeigen wir Ihnen, welche versteckten EBITDA- und Cashflow-Chancen in Ihrem Unternehmen liegen. Und was der erste Schritt wäre. Keine Verpflichtung. Kein Verkaufsgespräch. Nur Substanz.",
-      en: "In 30 minutes, we\u2019ll show you what hidden EBITDA and cash flow opportunities exist in your business. And what the first step would be. No commitment. No sales pitch. Just substance.",
+      de: "In 30 Minuten prüfen wir gemeinsam, ob eine Management-Wahrheitslücke in Ihrem Unternehmen existiert — zwischen dem, was Ihre BWA zeigt, und dem, was Ihre Geschäftsleitung tatsächlich für Entscheidungen braucht. Kein Verkaufsgespräch. Kein Pitch-Deck. Nur Substanz.",
+      en: "In 30 minutes, we\u2019ll assess whether a management truth gap exists in your business — between what your accounting shows and what your leadership actually needs for decisions. No sales pitch. No slide deck. Just substance.",
     },
     cta: { de: "Diagnose-Gespräch buchen", en: "Book a diagnostic call" },
   },
@@ -538,8 +549,8 @@ export const translations = {
   },
   footer: {
     tagline: {
-      de: "AI-first Business Optimization für den Mittelstand.",
-      en: "AI-first business optimization for mid-market companies.",
+      de: "Operative Intelligenz für den Mittelstand.",
+      en: "Operational intelligence for mid-market companies.",
     },
   },
 } as const;
