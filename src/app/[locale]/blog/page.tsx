@@ -24,6 +24,15 @@ export async function generateMetadata({
         "en-US": "https://www.valtor.io/en/blog",
       },
     },
+    openGraph: {
+      title: isDE
+        ? "Blog: Einblicke in datengetriebene Unternehmenssteuerung"
+        : "Blog: Insights on Data-Driven Business Steering",
+      description: isDE
+        ? "Einblicke in Business Optimization, Management-P&L, operative Intelligenz und datengetriebene Unternehmenssteuerung für den Mittelstand."
+        : "Insights on business optimization, management P&L, operational intelligence, and data-driven steering for mid-market companies.",
+      url: `https://www.valtor.io/${locale}/blog`,
+    },
   };
 }
 

@@ -36,6 +36,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title[l],
       description: post.description[l],
+      url: `https://www.valtor.io/${locale}/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       locale: l === "de" ? "de_DE" : "en_US",
