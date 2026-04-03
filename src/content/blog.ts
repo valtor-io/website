@@ -313,7 +313,7 @@ export const posts: BlogPost[] = [
       de: ["KI Mittelstand Scheitern", "Datenqualität Voraussetzung KI", "Datenarchitektur Unternehmen", "AI Readiness Mittelstand", "deterministische Systeme", "Daten vor Künstliche Intelligenz"],
       en: ["AI project failure data quality", "data foundation before AI", "AI readiness mid-market", "deterministic vs probabilistic systems", "data architecture business", "why AI projects fail"],
     },
-    relatedSlugs: ["eu-ai-act-datengrundlage", "versteckte-margen-lecks", "e-rechnung-datenpflicht-chance-mittelstand"],
+    relatedSlugs: ["eu-ai-act-datengrundlage", "versteckte-margen-lecks", "performance-intelligence-dashboards-entscheidungen"],
     sections: [
       {
         heading: {
@@ -1674,6 +1674,187 @@ export const posts: BlogPost[] = [
           text: {
             de: "Die E-Rechnungspflicht ist der erste Fall in der Geschichte des deutschen Mittelstands, wo ein regulatorisches Datum strukturellen Druck für saubere Datenarchitektur erzeugt. Unternehmen, die das ernst nehmen und die Arbeit richtig machen, werden 2027 und 2028 einen Datenvorteil haben, den ihre Mitbewerber nicht haben werden.",
             en: "The e-invoice mandate is the first case in the history of the German mid-market where a regulatory deadline creates structural pressure for clean data architecture. Companies that take this seriously and do the work right will have a data advantage in 2027 and 2028 that their competitors won't have.",
+          },
+        },
+      },
+    ],
+  },
+  {
+    slug: "performance-intelligence-dashboards-entscheidungen",
+    publishedAt: "2026-04-03",
+    readingTime: { de: "9 Min", en: "9 min" },
+    category: { de: "Managementwahrheit", en: "Management Truth" },
+    title: {
+      de: "Performance Intelligence: Warum Dashboards alleine keine Entscheidungen verbessern",
+      en: "Performance Intelligence: Why Dashboards Alone Don't Improve Decisions",
+    },
+    description: {
+      de: "76% der Mittelständler kämpfen mit unzureichender Datenqualität — und kaufen trotzdem zuerst das Dashboard. Warum Business Intelligence strukturell scheitert und was Performance Intelligence stattdessen bedeutet.",
+      en: "76% of mid-market companies struggle with inadequate data quality — yet they buy the dashboard first. Why Business Intelligence structurally fails and what Performance Intelligence means instead.",
+    },
+    keywords: {
+      de: ["Performance Intelligence Mittelstand", "Business Intelligence scheitert", "Datenqualität Controlling", "Unternehmenssteuerung Dashboards", "Management Entscheidungen verbessern DACH"],
+      en: ["Performance Intelligence vs Business Intelligence", "BI project failure mid-market", "data quality controlling DACH", "management decisions data", "operational steering Mittelstand"],
+    },
+    relatedSlugs: ["daten-vor-ki", "bwa-vs-management-pnl", "rolling-forecast-jahresplanung-mittelstand"],
+    sections: [
+      {
+        heading: {
+          de: "Der Dashboard-Reflexkauf: Ein vertrautes Muster",
+          en: "The Dashboard Reflex Purchase: A Familiar Pattern",
+        },
+        body: {
+          de: "Das Muster ist inzwischen bekannt: Ein Geschäftsführer oder CFO beschließt, dass das Unternehmen endlich datengetrieben werden soll. Die Konkurrenz redet über Dashboards, der Steuerberater erwähnt digitale Auswertungen, ein Berater empfiehlt Power BI oder Qlik. Es wird eine Lizenz gekauft, eine Implementierung beauftragt, und nach vier bis sechs Monaten gibt es tatsächlich Dashboards. Ordentliche Visualisierungen, Balkendiagramme, Trendlinien.\n\nSechs bis zwölf Monate später: Die Dashboards existieren. Aber die Entscheidungsprozesse im Unternehmen haben sich nicht verändert. Niemand fragt in der Geschäftsleitungssitzung gezielt nach Dashboarddaten. Wo doch — zeigen die Zahlen ein Bild, dem die Führungskräfte nicht ganz vertrauen. Und das zu Recht.\n\nDas ist kein Ausnahmefall. Es ist das statistisch häufigste Ergebnis von Business-Intelligence-Projekten im deutschen Mittelstand. Laut einer Studie haben 53 Prozent der Unternehmen Probleme bei der Steuerung ihrer Digitalisierungsprojekte — fünf Prozentpunkte mehr als im Vorjahr. Das Investitionsvolumen steigt, der Nutzen bleibt hinter den Erwartungen zurück.\n\nDer Fehler liegt nicht im Tool. Er liegt in der Annahme, dass ein Dashboard das Endprodukt ist — und nicht ein Ausgabeformat, das nur dann nützlich ist, wenn dahinter die richtige Architektur steht.",
+          en: "The pattern is by now familiar: a CEO or CFO decides it's finally time to make the company data-driven. Competitors talk about dashboards, the tax advisor mentions digital reporting, a consultant recommends Power BI or Qlik. A license is purchased, an implementation commissioned, and after four to six months there are dashboards. Proper visualizations, bar charts, trend lines.\n\nSix to twelve months later: the dashboards exist. But the decision-making processes in the company haven't changed. Nobody asks specifically about dashboard data in the management meeting. Where they do — the numbers show a picture leadership can't fully trust. Rightly so.\n\nThis isn't an exception. It's the statistically most common outcome of Business Intelligence projects in the German mid-market. According to studies, 53 percent of companies report problems managing their digitalization projects — five percentage points more than the previous year. Investment volumes increase, yet the benefit falls short of expectations.\n\nThe mistake isn't the tool. It's the assumption that a dashboard is the end product — rather than an output format that's only useful when the right architecture sits behind it.",
+        },
+        stats: [
+          {
+            number: "53%",
+            label: { de: "der Unternehmen haben Probleme bei der Steuerung ihrer Digitalisierungsprojekte (2026)", en: "of companies report problems managing their digitalization projects (2026)" },
+            source: "Digital Chiefs / Digitalisierungsmonitor Mittelstand 2026",
+          },
+          {
+            number: "76%",
+            label: { de: "der KMU kämpfen mit unzureichender Datenqualität und Datensilos", en: "of SMEs struggle with inadequate data quality and data silos" },
+            source: "KfW Research, Februar 2026",
+          },
+        ],
+      },
+      {
+        heading: {
+          de: "Was Performance Intelligence tatsächlich bedeutet",
+          en: "What Performance Intelligence Actually Means",
+        },
+        body: {
+          de: "Auf der Horváth AI & Data Convention 2026 in Düsseldorf — der wichtigsten deutschsprachigen Konferenz für datengetriebene Unternehmenssteuerung — lautete das Leitthema: Performance Intelligence: From Insights to Impact. Die Formulierung ist präzise, weil sie das eigentliche Problem benennt.\n\nBusiness Intelligence gibt Ihnen Erkenntnisse (Insights). Performance Intelligence verbindet diese Erkenntnisse systematisch mit Entscheidungen und messbaren Verbesserungen (Impact). Der Übergang vom einen zum anderen ist nicht selbstverständlich — und genau dort scheitern die meisten BI-Projekte.\n\nDer Unterschied liegt nicht im Tool. Power BI kann theoretisch Performance Intelligence liefern. Qlik ebenfalls. Das Problem liegt in der Sequenz und in der Architektur dahinter:\n\nBusiness Intelligence ohne Performance-Fundament beginnt mit dem Dashboard. Es visualisiert Daten, die aus Quellsystemen gezogen werden. Es zeigt, wie Umsatz, Kosten und Marge sich entwickeln. Es beantwortet die Frage: Was ist passiert?\n\nPerformance Intelligence beginnt mit der Frage: Welche Entscheidung muss besser werden? Daraus wird rückwärts abgeleitet, welche Informationen für diese Entscheidung notwendig sind, welche Datenquellen diese Informationen enthalten, wie die Daten zusammengeführt und qualitätsgesichert werden müssen — und erst zuletzt, wie die Information visualisiert wird.\n\nDas klingt nach einer kleinen methodischen Differenz. In der Praxis ist es der Unterschied zwischen einem Dashboard, das benutzt wird, und einem, das nach sechs Monaten niemand mehr öffnet.",
+          en: "At the Horváth AI & Data Convention 2026 in Düsseldorf — the most important German-language conference for data-driven corporate management — the leading theme was: Performance Intelligence: From Insights to Impact. The formulation is precise because it names the actual problem.\n\nBusiness Intelligence gives you insights. Performance Intelligence connects these insights systematically to decisions and measurable improvements (impact). The transition from one to the other isn't automatic — and that's exactly where most BI projects fail.\n\nThe difference isn't the tool. Power BI can theoretically deliver Performance Intelligence. So can Qlik. The problem lies in the sequence and the architecture behind it:\n\nBusiness Intelligence without a performance foundation starts with the dashboard. It visualizes data pulled from source systems. It shows how revenue, costs, and margins develop. It answers the question: What happened?\n\nPerformance Intelligence starts with the question: Which decision needs to get better? From this, it works backward to determine which information is necessary for that decision, which data sources contain that information, how the data must be unified and quality-assured — and only at the end, how the information should be visualized.\n\nThis sounds like a minor methodological difference. In practice, it's the difference between a dashboard that gets used and one that nobody opens after six months.",
+        },
+        callout: {
+          type: "tip",
+          text: {
+            de: "Performance Intelligence beginnt nicht mit dem Dashboard. Es beginnt mit der Frage: Welche operative Entscheidung soll durch bessere Daten verbessert werden? Das Dashboard ist das letzte Element — nicht das erste.",
+            en: "Performance Intelligence doesn't start with the dashboard. It starts with the question: which operational decision should be improved through better data? The dashboard is the last element — not the first.",
+          },
+        },
+      },
+      {
+        heading: {
+          de: "Das Datenfundament-Problem: Schöne Dashboards auf falschen Zahlen",
+          en: "The Data Foundation Problem: Beautiful Dashboards on Wrong Numbers",
+        },
+        body: {
+          de: "Hier liegt das strukturelle Problem, das in den meisten BI-Diskussionen ausgeblendet wird: 76 Prozent der mittelständischen Unternehmen kämpfen mit unzureichender Datenqualität und Datensilos (KfW Research, Februar 2026). Das bedeutet: Für drei von vier Unternehmen im Mittelstand sind die Rohdaten, die in das Dashboard einfließen, in erheblichem Maße lückenhaft, inkonsistent oder falsch zugeordnet.\n\nEin Dashboard auf schlechten Daten ist kein neutrales Tool — es ist eine Fehlinformationsmaschine mit professionellem Aussehen. Management, das auf Basis dieser Visualisierungen entscheidet, entscheidet schlechter als Management, das auf Basis von Bauchgefühl entscheidet. Beim Bauchgefühl weiß man, dass man unsicher ist. Bei einem Dashboard mit falschen Zahlen weiß man es nicht.\n\nDie Ursachen sind bekannt: Daten leben in verschiedenen Systemen ohne eindeutige Verknüpfung — CRM, ERP, Buchhaltung, HR, Projektmanagement. Kundennummern stimmen zwischen Systemen nicht überein. Umsatz wird im CRM als gewonnen erfasst, im ERP aber erst bei Rechnungsstellung. Projektkosten werden teils dem Projekt, teils dem Kostenträger zugeordnet, je nach dem wer gerade bucht.\n\nKein Dashboard-Tool löst dieses Problem. Power BI kann keine CRM-Kundennummern mit DATEV-Buchungsreferenzen automatisch zusammenführen, wenn die Datenlogik dahinter nicht sauber ist. Qlik kann keine konsistente Margenrechnung nach Profit Center zeigen, wenn die Kostenzuordnung in der Quelle inkonsistent ist.\n\nDas Datenfundament muss vor dem Dashboard stehen. Das ist keine optionale Empfehlung — es ist eine technische Notwendigkeit.",
+          en: "Here lies the structural problem that most BI discussions obscure: 76 percent of mid-market companies struggle with inadequate data quality and data silos (KfW Research, February 2026). This means: for three out of four mid-market companies, the raw data flowing into the dashboard is substantially incomplete, inconsistent, or incorrectly attributed.\n\nA dashboard on bad data isn't a neutral tool — it's a misinformation machine with a professional appearance. Management making decisions based on these visualizations makes worse decisions than management acting on gut feeling. With gut feeling, you know you're uncertain. With a dashboard showing wrong numbers, you don't.\n\nThe causes are well-known: data lives in different systems without clear linkage — CRM, ERP, accounting, HR, project management. Customer numbers don't match across systems. Revenue is recorded in the CRM as won but only in the ERP at invoicing. Project costs are sometimes attributed to the project, sometimes to the cost center, depending on who's booking.\n\nNo dashboard tool solves this problem. Power BI cannot automatically reconcile CRM customer numbers with DATEV booking references if the underlying data logic isn't clean. Qlik cannot show a consistent margin calculation by profit center if cost attribution at the source is inconsistent.\n\nThe data foundation must come before the dashboard. That's not an optional recommendation — it's a technical necessity.",
+        },
+        callout: {
+          type: "warning",
+          text: {
+            de: "Ein Dashboard auf schlechten Daten ist gefährlicher als gar kein Dashboard. Es erzeugt falsche Sicherheit: Management entscheidet auf Basis von Zahlen, die professionell aussehen aber inhaltlich falsch sind.",
+            en: "A dashboard on bad data is more dangerous than no dashboard at all. It creates false confidence: management makes decisions based on numbers that look professional but are substantively wrong.",
+          },
+        },
+      },
+      {
+        heading: {
+          de: "Business Intelligence vs. Performance Intelligence: Der strukturelle Unterschied",
+          en: "Business Intelligence vs. Performance Intelligence: The Structural Difference",
+        },
+        body: {
+          de: "Der Vergleich ist nicht akademisch. Er hat direkte Konsequenzen für die Reihenfolge, in der ein Unternehmen seine Dateninfrastruktur aufbaut — und dafür, ob am Ende tatsächlich bessere Entscheidungen getroffen werden.",
+          en: "The comparison isn't academic. It has direct consequences for the sequence in which a company builds its data infrastructure — and for whether better decisions are actually made at the end.",
+        },
+        comparison: {
+          oldLabel: { de: "Business Intelligence", en: "Business Intelligence" },
+          newLabel: { de: "Performance Intelligence", en: "Performance Intelligence" },
+          rows: [
+            {
+              dimension: { de: "Startpunkt", en: "Starting point" },
+              old: { de: "Dashboard / Visualisierung", en: "Dashboard / visualization" },
+              new: { de: "Entscheidung, die verbessert werden soll", en: "Decision that needs to improve" },
+            },
+            {
+              dimension: { de: "Datenfundament", en: "Data foundation" },
+              old: { de: "Verbindet verfügbare Quellen", en: "Connects available sources" },
+              new: { de: "Qualitätsgesicherte, deterministische Datenschicht", en: "Quality-assured, deterministic data layer" },
+            },
+            {
+              dimension: { de: "Kernfrage", en: "Core question" },
+              old: { de: "Was ist passiert?", en: "What happened?" },
+              new: { de: "Was soll als nächstes besser werden?", en: "What should improve next?" },
+            },
+            {
+              dimension: { de: "Outputformat", en: "Output format" },
+              old: { de: "Dashboard / Bericht", en: "Dashboard / report" },
+              new: { de: "Entscheidungsempfehlung mit Evidenz", en: "Decision recommendation with evidence" },
+            },
+            {
+              dimension: { de: "Feedbackschleife", en: "Feedback loop" },
+              old: { de: "Selten oder gar nicht", en: "Rarely or not at all" },
+              new: { de: "Systematisch: Entscheidung — Maßnahme — Messung", en: "Systematic: decision — action — measurement" },
+            },
+            {
+              dimension: { de: "Erfolgsmessung", en: "Success measurement" },
+              old: { de: "Dashboard wird geöffnet", en: "Dashboard gets opened" },
+              new: { de: "Operative Kennzahl verbessert sich", en: "Operational KPI improves" },
+            },
+          ],
+        },
+      },
+      {
+        heading: {
+          de: "Die drei Lücken zwischen Insight und Impact",
+          en: "The Three Gaps Between Insight and Impact",
+        },
+        body: {
+          de: "In der Praxis scheitert der Übergang von Daten zu Entscheidungen fast immer an einer von drei Stellen. Alle drei müssen geschlossen sein, damit Performance Intelligence funktioniert:",
+          en: "In practice, the transition from data to decisions almost always fails at one of three points. All three must be closed for Performance Intelligence to work:",
+        },
+        numberedList: [
+          {
+            de: "**Datenlücke: Falsche oder unvollständige Rohdaten.** Die häufigste Lücke. Wenn Kundendaten zwischen CRM und Buchhaltung nicht übereinstimmen, wenn Projektkosten nicht vollständig zugeordnet sind, wenn Vertriebsdaten mit zwei Wochen Verzögerung im System landen — dann ist jede Analyse darauf aufgebaut fehlerhaft. Diese Lücke lässt sich nicht im Dashboard schließen. Sie muss in der Datenarchitektur geschlossen werden: eindeutige Entitätsidentifikatoren, automatische Synchronisation, deterministische Transformationsregeln.",
+            en: "**Data gap: Wrong or incomplete raw data.** The most common gap. When customer data doesn't match between CRM and accounting, when project costs aren't fully attributed, when sales data arrives in the system two weeks late — every analysis built on it is flawed. This gap cannot be closed in the dashboard. It must be closed in the data architecture: unique entity identifiers, automatic synchronization, deterministic transformation rules.",
+          },
+          {
+            de: "**Entscheidungslogik-Lücke: Daten ohne Entscheidungsrahmen.** Selbst wenn die Daten stimmen, führt ein Dashboard nicht automatisch zu besseren Entscheidungen — wenn nicht klar ist, wann welche Zahl eine Entscheidung auslösen soll. Was ist der Schwellenwert, bei dem eine Marge zu niedrig ist und Handlungsbedarf entsteht? Welcher Prozessschritt ist zu langsam? Ohne explizite Entscheidungslogik bleibt das Dashboard eine Informationssammlung ohne Handlungsimpuls. Performance Intelligence verankert die Entscheidungslogik direkt im System: Wenn Metrik X unter Schwellenwert Y fällt, erscheint Empfehlung Z.",
+            en: "**Decision logic gap: Data without a decision framework.** Even when the data is correct, a dashboard doesn't automatically lead to better decisions — if it's not clear when which number should trigger a decision. What's the threshold at which a margin is too low and action is required? Which process step is too slow? Without explicit decision logic, the dashboard remains an information collection without action impulse. Performance Intelligence anchors the decision logic directly in the system: when metric X falls below threshold Y, recommendation Z appears.",
+          },
+          {
+            de: "**Feedbackschleifen-Lücke: Entscheidungen ohne Wirkungsmessung.** Die am meisten übersehene Lücke. Eine Entscheidung wird getroffen — zum Beispiel, das Debitorenmanagement für ein bestimmtes Kundensegment zu intensivieren. Aber wird gemessen, ob die Entscheidung gewirkt hat? Ist der DSO des Segments drei Monate später gesunken? Ohne geschlossene Feedbackschleife gibt es kein organisationales Lernen. Das Unternehmen entscheidet im Dunkeln — auch wenn es ein Dashboard hat.",
+            en: "**Feedback loop gap: Decisions without impact measurement.** The most overlooked gap. A decision is made — for example, to intensify debtor management for a specific customer segment. But is it measured whether the decision had an effect? Has the segment's DSO dropped three months later? Without a closed feedback loop, there's no organizational learning. The company decides in the dark — even if it has a dashboard.",
+          },
+        ],
+      },
+      {
+        heading: {
+          de: "Deterministisch statt probabilistisch: Wie Managementwahrheit entsteht",
+          en: "Deterministic Not Probabilistic: How Management Truth Is Built",
+        },
+        body: {
+          de: "Hier liegt der Kern des Valtor.io-Ansatzes: Managementwahrheit ist nicht das Ergebnis von Algorithmen, KI-Modellen oder statistischen Schätzungen. Sie ist das Ergebnis einer deterministischen Datenschicht — einem System, bei dem jede Zahl auf ihre Quelldaten zurückgeführt werden kann.\n\nDas bedeutet konkret:\n\n**Einheitliche Datenmodell-Ebene:** Alle Quellsysteme — CRM, Buchhaltung, ERP, HR, Projektmanagement — werden in ein einheitliches Datenmodell überführt. Kunden, Projekte, Kostenträger und Buchungen werden systemübergreifend mit eindeutigen Identifikatoren verknüpft. Keine manuelle Excel-Aggregation. Keine doppelten Datensätze.\n\n**Deterministische Transformationsregeln:** Wie Kosten auf Profit Center zugeordnet werden, wie Margen berechnet werden, wie Umsatz periodisiert wird — das wird einmal definiert, einmal implementiert und danach konsistent angewendet. Keine Ad-hoc-Anpassungen je nach Präsentation oder Publikum.\n\n**Vollständige Nachvollziehbarkeit:** Jede aggregierte Zahl — ob EBITDA eines Profit Centers, Deckungsbeitrag eines Kunden oder Durchlaufzeit eines Prozesses — lässt sich bis zur Einzeltransaktion aufdröseln. Das ist nicht ein Feature für Prüfer. Es ist eine Voraussetzung dafür, dass Management der Zahl vertraut.\n\n**Monatlicher Steuerungsmechanismus:** Auf dieser Grundlage entsteht kein statisches Dashboard, sondern eine monatliche Steuerungslogik: Welche Kennzahl hat sich wie verändert? Was ist die wahrscheinlichste Ursache? Was sind die drei konkreten Handlungsempfehlungen mit dem höchsten erwarteten Impact?\n\nDas ist der Unterschied zwischen einem Tool, das Information zeigt, und einem System, das Führungsentscheidungen strukturiert.\n\n68 Prozent der mittelständischen Unternehmen haben keine ausgearbeitete Datenstrategie, keine klaren Verantwortlichkeiten für Datenprojekte und messen den ROI ihrer Digitalisierungsinvestitionen nicht systematisch. Das zeigt, dass die Infrastruktur für Performance Intelligence im deutschen Mittelstand strukturell unterentwickelt ist. Die Dashboards kommen. Die Architektur dahinter fehlt.",
+          en: "Here lies the core of the Valtor.io approach: management truth is not the result of algorithms, AI models, or statistical estimates. It is the result of a deterministic data layer — a system where every number can be traced back to its source data.\n\nThis means concretely:\n\n**Unified data model layer:** All source systems — CRM, accounting, ERP, HR, project management — are transferred into a unified data model. Customers, projects, cost centers, and bookings are linked across systems with unique identifiers. No manual Excel aggregation. No duplicate records.\n\n**Deterministic transformation rules:** How costs are attributed to profit centers, how margins are calculated, how revenue is periodized — this is defined once, implemented once, and then applied consistently. No ad-hoc adjustments depending on presentation or audience.\n\n**Complete traceability:** Every aggregated number — whether EBITDA of a profit center, contribution margin of a customer, or throughput time of a process — can be drilled down to the individual transaction. This isn't a feature for auditors. It's a prerequisite for management trusting the number.\n\n**Monthly steering mechanism:** On this basis, not a static dashboard emerges, but a monthly steering logic: which KPI has changed how? What is the most likely cause? What are the three concrete action recommendations with the highest expected impact?\n\nThat's the difference between a tool that shows information and a system that structures leadership decisions.\n\n68 percent of mid-market companies have no developed data strategy, no clear responsibilities for data projects, and don't systematically measure the ROI of their digitalization investments. This shows that the infrastructure for Performance Intelligence in the German mid-market is structurally underdeveloped. The dashboards arrive. The architecture behind them is missing.",
+        },
+        stats: [
+          {
+            number: "68%",
+            label: { de: "der Mittelständler haben keine ausgearbeitete KI- oder Datenstrategie und messen den ROI nicht systematisch", en: "of mid-market companies have no developed data or AI strategy and don't systematically measure ROI" },
+            source: "KfW Research / Maximal Digital KI-Studie 2025/2026",
+          },
+        ],
+      },
+      {
+        heading: {
+          de: "Was fehlende Performance Intelligence konkret kostet",
+          en: "What Missing Performance Intelligence Concretely Costs",
+        },
+        body: {
+          de: "Die Kosten fehlender Performance Intelligence sind schwerer zu quantifizieren als ein Kontokorrentzins oder ein Skontoverlust — aber sie sind real und erheblich.\n\n**Entscheidungsverzögerungen:** Wenn Führungskräfte einer Kennzahl nicht vertrauen, wird die Entscheidung vertagt. Ein Mittelständler mit 10M EUR Umsatz, der eine Preisanpassung, eine Kundenkündigung oder eine Ressourcenentscheidung um zwei Monate verzögert, weil die Datenlage unklar ist, verliert typischerweise 50.000 bis 200.000 EUR an entgangenem oder unnötig ausgegebenem Cash.\n\n**Falsche Priorisierung:** Ohne deterministische Profitabilitätsanalyse nach Kunde, Produkt und Prozess werden Ressourcen in die sichtbaren, aber nicht in die wesentlichen Verbesserungen investiert. Das Ergebnis: operative Effizienz, die sich nicht in EBITDA niederschlägt.\n\n**Verpasster Unternehmenswert:** Im deutschen Mittelstand liegt der EBITDA-Multiple derzeit bei durchschnittlich 5,7x (Stand Q1 2026). Ein Unternehmen mit 1M EUR EBITDA ist rund 5,7M EUR wert. Wer durch fehlende Dateninfrastruktur 100.000 EUR EBITDA liegen lässt, lässt 570.000 EUR Unternehmenswert ungebaut. Performance Intelligence ist keine IT-Investition — sie ist eine Unternehmenswert-Investition.\n\nDie Frage ist nicht, ob Sie Dashboards brauchen. Die Frage ist, ob das, was hinter Ihren Dashboards steht, Managementwahrheit produziert — oder nur gut aussieht.",
+          en: "The costs of missing Performance Intelligence are harder to quantify than an overdraft interest rate or a lost discount — but they are real and substantial.\n\n**Decision delays:** When executives don't trust a KPI, decisions get postponed. A mid-market company with 10M EUR revenue that delays a pricing adjustment, a client termination, or a resource decision by two months because the data situation is unclear typically loses 50,000 to 200,000 EUR in missed or unnecessarily spent cash.\n\n**Wrong prioritization:** Without deterministic profitability analysis by customer, product, and process, resources are invested in visible but not material improvements. The result: operational efficiency that doesn't translate into EBITDA.\n\n**Missed company value:** In the German mid-market, the EBITDA multiple currently stands at an average of 5.7x (as of Q1 2026). A company with 1M EUR EBITDA is worth roughly 5.7M EUR. Those who leave 100,000 EUR of EBITDA on the table due to missing data infrastructure are leaving 570,000 EUR of company value unbuilt. Performance Intelligence isn't an IT investment — it's a company value investment.\n\nThe question isn't whether you need dashboards. The question is whether what stands behind your dashboards produces management truth — or just looks good.",
+        },
+        callout: {
+          type: "stat",
+          text: {
+            de: "Bei einem EBITDA-Multiple von 5,7x im deutschen Mittelstand (Q1 2026) entspricht jeder Euro ungenutztes EBITDA-Potenzial 5,70 Euro entgangenem Unternehmenswert. Performance Intelligence ist keine IT-Frage. Es ist eine Wertfrage.",
+            en: "At an EBITDA multiple of 5.7x in the German mid-market (Q1 2026), every euro of untapped EBITDA potential equals 5.70 EUR of unrealized company value. Performance Intelligence isn't an IT question. It's a value question.",
           },
         },
       },
