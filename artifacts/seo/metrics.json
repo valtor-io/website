@@ -1,12 +1,20 @@
 {
-  "timestamp": "2026-03-26T00:00:00Z",
+  "timestamp": "2026-04-05T00:00:00Z",
   "base_url": "https://www.valtor.io",
-  "note": "Baseline after initial SEO implementation. Run ./scripts/seo/audit.sh against live site for actual checks.",
   "summary": {
-    "passed": 13,
+    "passed": 15,
     "failed": 0,
     "warnings": 0,
-    "total": 13
+    "total": 15
+  },
+  "counts": {
+    "total_html_pages": 34,
+    "content_pages": 32,
+    "blog_pages": 28,
+    "homepage_pages": 2,
+    "blog_index_pages": 2,
+    "blog_posts": 13,
+    "sitemap_urls": 30
   },
   "implemented": {
     "robots_txt": true,
@@ -17,20 +25,42 @@
     "og_tags": true,
     "twitter_card": true,
     "structured_data_jsonld": true,
-    "hreflang": true,
+    "hreflang_de_en": true,
+    "hreflang_x_default": true,
     "viewport": true,
     "lang_attribute": true,
     "llms_txt": true,
-    "og_image": true
+    "og_image": true,
+    "metadataBase": true
   },
+  "schema_types": [
+    "Organization",
+    "ProfessionalService",
+    "WebSite",
+    "HowTo",
+    "VideoObject",
+    "BreadcrumbList",
+    "Article"
+  ],
   "missing": {
     "custom_favicon": false,
     "web_app_manifest": false,
     "google_search_console": false,
-    "analytics": false,
     "impressum_page": false,
     "datenschutz_page": false,
-    "faq_schema": false,
-    "url_based_i18n": false
-  }
+    "faq_schema": false
+  },
+  "fixes_applied": [
+    {
+      "date": "2026-04-05",
+      "issue": "metadataBase missing in root layout — _not-found page had localhost OG image URL",
+      "fix": "Added metadataBase export to src/app/layout.tsx"
+    },
+    {
+      "date": "2026-04-05",
+      "issue": "x-default hreflang missing on all 32 content pages",
+      "fix": "Added x-default pointing to /de in alternates.languages in [locale]/layout.tsx, blog/page.tsx, and blog/[slug]/page.tsx"
+    }
+  ],
+  "human_review_needed": []
 }

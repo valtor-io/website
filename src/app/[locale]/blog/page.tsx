@@ -22,6 +22,7 @@ export async function generateMetadata({
       languages: {
         "de-DE": "https://www.valtor.io/de/blog",
         "en-US": "https://www.valtor.io/en/blog",
+        "x-default": "https://www.valtor.io/de/blog",
       },
     },
     openGraph: {

@@ -1,6 +1,11 @@
 import { Inter, DM_Mono, Playfair_Display } from "next/font/google";
+import type { Metadata } from "next";
 import { Analytics } from "@/components/Analytics";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.valtor.io"),
+};
 
 const inter = Inter({
   variable: "--font-inter",
