@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-05T00:00:00Z",
+  "timestamp": "2026-05-09T00:00:00Z",
   "base_url": "https://www.valtor.io",
   "summary": {
     "passed": 15,
@@ -13,8 +13,8 @@
     "blog_pages": 28,
     "homepage_pages": 2,
     "blog_index_pages": 2,
-    "blog_posts": 13,
-    "sitemap_urls": 30
+    "blog_posts": 14,
+    "sitemap_urls": 32
   },
   "implemented": {
     "robots_txt": true,
@@ -38,8 +38,19 @@
     "ProfessionalService",
     "WebSite",
     "HowTo",
+    "HowToStep",
     "VideoObject",
     "BreadcrumbList",
+    "Service",
+    "Offer",
+    "OfferCatalog",
+    "PriceSpecification",
+    "FAQPage",
+    "Question",
+    "Answer",
+    "ListItem",
+    "Country",
+    "Duration",
     "Article"
   ],
   "missing": {
@@ -60,6 +71,11 @@
       "date": "2026-04-05",
       "issue": "x-default hreflang missing on all 32 content pages",
       "fix": "Added x-default pointing to /de in alternates.languages in [locale]/layout.tsx, blog/page.tsx, and blog/[slug]/page.tsx"
+    },
+    {
+      "date": "2026-05-09",
+      "issue": "Audit script reported false-positive hreflang missing on de.html/en.html (React renders attribute as `hrefLang`, audit grep was case-sensitive). Also flagged Next.js auto-generated _global-error.html as missing meta description / JSON-LD / canonical — system error pages are intentionally minimal and excluded.",
+      "fix": "Updated .github/workflows/seo-audit.yml: case-insensitive grep for hreflang, exclude _global-error.html alongside _not-found.html in title/meta/JSON-LD/canonical loops."
     }
   ],
   "human_review_needed": []
