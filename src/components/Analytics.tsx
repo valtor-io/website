@@ -2,17 +2,21 @@ import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-ZL0PMRW091";
 
-export function Analytics() {
-  if (!GA_ID) return null;
+// Leadfeeder / Dealfront — company-level visitor identification
+const LEADFEEDER_ID =
+  process.env.NEXT_PUBLIC_LEADFEEDER_ID || "lYNOR8x5nLq7WQJZ";
 
+export function Analytics() {
   return (
     <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
+      {GA_ID && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="gtag-init" strategy="afterInteractive">
+            {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -20,7 +24,23 @@ export function Analytics() {
             page_path: window.location.pathname,
           });
         `}
-      </Script>
+          </Script>
+        </>
+      )}
+
+      {LEADFEEDER_ID && (
+        <>
+          <Script id="leadfeeder-init" strategy="afterInteractive">
+            {`
+          window.ldfdr = window.ldfdr || function(){(ldfdr._q = ldfdr._q || []).push([].slice.call(arguments));};
+        `}
+          </Script>
+          <Script
+            src={`https://sc.lfeeder.com/lftracker_v1_${LEADFEEDER_ID}.js`}
+            strategy="afterInteractive"
+          />
+        </>
+      )}
     </>
   );
 }
